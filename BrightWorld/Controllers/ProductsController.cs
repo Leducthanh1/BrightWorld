@@ -20,7 +20,7 @@ namespace BrightWorld.Controllers
             {
                 //products = db.Products.Include(p => p.Product)
                 //    .Include(p => p.)
-                 products = db.Products.Where(p => p.Class == categoryId);
+                 products = db.Products.Include(p=>p.ProductFeature).Where(p => p.Class == categoryId);
             }
             else
             {
