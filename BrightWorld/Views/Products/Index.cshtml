@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BrightWorld.Models.Product>
+@{
+    ViewBag.Title = "Products";
+}
+
+<link href="~/Content/Css_Js/Css/Products.css">
+<h2>Product</h2>
+<div style="height: 250px;"></div>
+@foreach(var product in Model) {
+   <div class="Product card col-6 col-sm-4 col-lg-3">
+    
+    <a href="../Htmls/ProductDetail.html?id= @product.ID + ">
+        
+        <img class="card-img-top" src="../Img/Product/ data[a]..png">
+        <h6 class="card-title" title=" @product.Name ">@product.Name</h6>
+        <div class="Product_Describe">
+            
+            <p class="card-text"><i> @product.Brand </i></p>
+            <p class="card-text Ra_Value"> data[a].Rate <i class="fas fa-star" style="color: #ffc107;"></i></p>
+            <p class="card-text"><i>@product.Class </i></p>
+            <p class="card-text Pri_Value">$ @product.Price </p>
+            
+        </div>
+        @*<div class="Product_Button">
+             <a class="AddButton btn btn-outline-primary btn-sm" data-id=" data[a].Id ">Add</a>
+             <a class="BuyButton btn btn-primary btn-sm">Buy</a>
+        </div>*@
+    </a>
+</div>
+}
+

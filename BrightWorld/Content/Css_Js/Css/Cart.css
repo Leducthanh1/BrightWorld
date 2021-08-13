@@ -1,0 +1,148 @@
+.row {
+	padding: 0 15px;
+}
+/*Product List*/
+	.Product {
+		background-color: var(--light3_color);
+		box-shadow: 2px 2px 5px var(--dark1-03_color);
+		margin-top: 15px;
+	}
+
+	.Product h4 {
+		margin-top: 25px;
+		color: var(--blue1_color);
+	}
+
+	.Cart_List {
+		padding: 15px 25px;
+	}
+
+	.Cart_Item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: solid var(--dark4_color) 1px;
+	}
+
+	.Cart_Item img {
+		width: 100px;
+	}
+
+	#Cart_Item-Name {
+		width: 30%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.Cart_Item-Price {
+		color: var(--red1_color);
+	}
+
+	.Product_Detail-Amount {
+		background-color: var(--light3_color);
+		padding: 0 5px;
+	}
+
+	.Product_Detail-Amount td {
+		padding: 5px 5px;
+		cursor: pointer;
+		-webkit-user-select: none;
+	}
+
+	.Product_Detail-Amount td i {
+		color: var(--blue1_color);
+	}
+
+	#Amount {
+		width: 15px;
+		text-align: center;
+		border: none;
+		color: var(--blue1_color);
+		font-weight: 500;
+	}
+
+/*Pay*/
+	/*Address*/
+		.Address {
+			padding: 25px;
+			margin-top: 15px;
+			background-color: var(--light3_color);
+			box-shadow: 2px 2px 5px var(--dark1-03_color);
+			overflow: auto;
+		}
+
+		.Address h4 {
+			margin-bottom: 25px;
+			color: var(--blue1_color);
+		}
+
+		.Address div {
+			width: 100%;
+			margin: 0;
+		}
+
+		.Address div input {
+			width: 100%;
+			border: none;
+			border-bottom: solid var(--dark4_color) 2px;
+			margin-bottom: 15px;
+			padding: 0px 15px;
+			font-weight: 500;
+		}
+
+		.Address div a {
+			width: 50%;
+			margin-left: 25%;
+		}
+
+	/*Calculate*/
+		.Pay {
+			margin-top: 15px;
+			padding: 25px;
+			background-color: var(--light3_color);
+			box-shadow: 2px 2px 5px var(--dark1-03_color);
+		}
+
+		.Calculate {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			border-bottom: solid var(--dark4_color) 1px;
+		}
+
+		.Calculate_Header {
+			margin-bottom: 20px;
+			width: 100%;
+			color: var(--blue1_color);
+		}
+
+		.Calculate_Tag {
+			width: 50%;
+			font-weight: 500;
+		}
+
+		.Calculate_Price {
+			width: 50%;
+			text-align: right;
+		}
+
+		.Total {
+			margin-top: 25px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.Total h5, .Total h6 {
+			width: 50%;
+		}
+
+		.Total h6 {
+			text-align: right;
+		}
+
+		.Total a {
+			width: 50%;
+			margin-top: 30px;
+			margin-left: 25%;
+		}

@@ -1,0 +1,115 @@
+/*Conten_Header*/
+	.Conten {
+	}
+
+	.Conten_Header {
+		position: relative;
+	}
+
+	.Conten_Header img {
+		width: 100%;
+	}
+
+	.Conten_Header-SearchBox {
+		width: 70%;
+		position: absolute;
+		bottom:  -5%;
+		left: 15%;
+		background-color: var(--light1_color);
+		padding: 10px 30px;
+		box-shadow: 4px 4px 8px var(--dark1-03_color);
+	}
+
+	.Conten_Header-SearchBox input {
+		width: calc(100% - 65px);
+		max-width: 85%;
+		background-color: var(--light1_color) !important;
+		border: none;
+		font-weight: 500;
+	}
+
+	.Conten_Header-SearchBox .btn {
+		width: 50px;
+		min-width: 10%;
+		margin-left: 10px;
+		box-shadow: none;
+	}
+
+/*Conten_FAQ*/
+	.Conten_FAQ {
+		margin-top: 80px;
+		padding-top: 20px;
+		background-color: var(--light3_color);
+		box-shadow: 2px 2px 5px var(--dark1-01_color);
+	}
+
+	/*Header*/
+		.Conten_FAQ-Header {
+			text-align: center;
+			margin-bottom: 25px;
+		}
+
+		.Conten_FAQ-Header h3 {
+			color: var(--blue1_color);
+		}
+
+		.Conten_FAQ-Header h6 {
+			color: var(--dark3_color);
+		}
+
+	/*Question*/
+		.Conten_FAQ-Question {
+			
+		}
+
+		.Conten_FAQ-Question li {
+			border: solid var(--dark4_color) 2px;
+			border-radius: 4px;
+			padding: 10px 20px;
+			margin: 0 15px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+
+		.Conten_FAQ-Question h6 {
+			-webkit-user-select: none;
+		}
+
+		.Conten_FAQ-Question p {
+			display: none;
+		}
+
+	/*Contact*/
+		.Conten_FAQ-Contact {
+			text-align: center;
+			margin-top: 80px;
+			padding-bottom: 100px;
+		}
+
+		.Conten_FAQ-Contact h5 {
+			color: var(--blue2_color);
+		}
+
+		.Conten_FAQ-ContactMail {
+			width: 50%;
+			background-color: var(--light1_color);
+			border: solid var(--blue1_color);
+			border-radius: 2px;
+			margin: 15px auto;
+			padding-left: 10px;
+		}
+
+		.Conten_FAQ-ContactMail input {
+			width: calc(100% - 65px);
+			border: none;
+			background-color: var(--light1_color) !important;
+			font-weight: 500;
+		}
+
+		.Conten_FAQ-ContactMail div {
+			width: 60px;
+			box-shadow: none;
+			border-radius: 0;
+			margin-right: -2px;
+			border-left: 2px;
+		}
