@@ -3,43 +3,442 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Css_Js/Css/Main.css" rel="stylesheet" />
+    <title>@ViewBag.Title | BrightWorld</title>
+    <link rel="shortcut icon" type="image/png" href="Img/General/favicon.png">
+    <link href="~/Content/Css_Js/Css/FontAwesome.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/Css_Js/Css/Products.css" rel="stylesheet">
+    <link href="~/Content/Css_Js/Css/Main.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        </div>*@
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Header Top Info -->
+            <div class="Header_Info row col-hide col-lg-show">
+                <ul class="Header_Info-List">
+                    <li class="Header_Info-Item">
+                        <div class="DarkMode_btn">
+                            <span class="DarkMode_Icon">
+                                <i class="fas fa-store"></i>
+                                <p>Our Store</p>
+                            </span>
+                        </div>
+                    </li>
                 </ul>
+                <ul class="Header_Info-List">
+                    <li class="Header_Info-Item">
+                        <a class="Header-UserBtn">
+                            <i class="fas fa-user"></i>
+                            <p>Account</p>
+                        </a>
+                    </li>
+                    <li class="Header_Info-Item">
+                        <a class="Header-CartBtn">
+                            <i class="fas fa-shopping-bag"></i>
+                            <p>Payment</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="col-hide col-lg-show">
+            <!-- Nav Bar -->
+            <div class="Header_Nav row">
+                <div class="col-4 col-sm-3">
+                    <a class="Header_Nav-Logo" href="../Home.html"><img src="../Img/General/Full_Logo.png" width="100%"></a>
+                </div>
+                <div class="Header_Nav-Link col-hide col-lg-6 col-lg-show">
+                    <ul class="Header_Nav-LinkList">
+                        <li class="Header_Nav-LinkItem">
+                            <a class="nav-link" href="../Home.html">Home</a>
+                            <div class="Header_Nav-LinkFoot"></div>
+                        </li>
+                        <li class="Header_Nav-LinkItem">
+                            <a class="nav-link" href="../Htmls/Products.html">Products</a>
+                            <div class="Header_Nav-LinkFoot"></div>
+                        </li>
+                        <li class="Header_Nav-LinkItem">
+                            <a class="nav-link" href="../Htmls/AboutUs.html">About Us</a>
+                            <div class="Header_Nav-LinkFoot"></div>
+                        </li>
+                        <li class="Header_Nav-LinkItem">
+                            <a class="nav-link" href="../Htmls/Support.html">Support</a>
+                            <div class="Header_Nav-LinkFoot"></div>
+                        </li>
+                    </ul>
+                    <div class="Header_Nav-LinkBoderItem"></div>
+                </div>
+                <!-- Search Box -->
+                <div class="col-12 col-sm-6 col-lg-3 order-2 order-sm-1" style="display: flex;">
+                    <div class="Header_Nav-SearchBar">
+                        <input type="search" class="Header_Nav-SearchBox form-control" placeholder="Search" />
+                        <button type="button" class="Header_Nav-SearchButton btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Responsive Button -->
+                <div class="Header_NavButton col-5 col-sm-3 offset-3 offset-sm-0 order-1 order-sm-2 col-lg-hide">
+                    <ul class="Header_NavButton-List">
+                        <li class="Header_NavButton-Item">
+                            <a class="Header-UserBtn">
+                                <i class="fas fa-user fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="Header_NavButton-Item">
+                            <a class="Header-CartBtn">
+                                <i class="fas fa-shopping-bag fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="Header_NavButton-Item">
+                            <a class="Header-MenuBtn">
+                                <i class="fas fa-bars fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="Overlay"></div>
+    <!-- Menu Button -->
+    <div class="Header_NavMb-Link" style="background-image: url(../Img/General/Bg_Nav.png); background-repeat: no-repeat; background-position: bottom 0 right 0; background-size: 100%;">
+        <ul class="Header_NavMb-LinkList">
+            <li class="Header_NavMb-LinkItem">
+                <a class="" href="../Home.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="Header_NavMb-LinkItem">
+                <a class="" href="../Htmls/Products.html"><i class="fas fa-store"></i> Products</a>
+            </li>
+            <li class="Header_NavMb-LinkItem">
+                <a class="" href="../Htmls/AboutUs.html"><i class="fas fa-users"></i> About Us</a>
+            </li>
+            <li class="Header_NavMb-LinkItem">
+                <a class="" href="../Htmls/Support.html"><i class="fas fa-cog"></i> Support</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Cart Button -->
+    <div class="Header_NavMb-Cart" style="background-image: url(../Img/General/Bg_Nav.png); background-repeat: no-repeat; background-position: bottom 0 right 0; background-size: 100%;">
+        <h4>Your Cart</h4>
+        <div class="Header_NavMb-CartBox">
+            <ul class="Header_NavMb-CartList">
+                <!-- <li class="Header_NavMb-CartItem"> -->
+                <!-- <a href="Htmls/ProductDetail.html">
+                    <img src="../Img/Product/400x400.png">
+                    <div>
+                        <h6>Test Product</h6>
+                        <span>Somethink Lorem Ipsum</span>
+                        <p>99.99$</p>
+                    </div>
+                </a> -->
+                <!-- </li> -->
+                <li id="Empty" class="Header_NavMb-CartItem">
+                    <h6>Cart is empty</h6>
+                </li>
+            </ul>
+        </div>
+        <div class="Header_NavMb-CartShow">
+            <a class="btn btn-primary" href="../Htmls/Cart.html">Cart & Pay</a>
+        </div>
+    </div>
+    <!-- Account Button -->
+    <div class="Header_NavMb-Account" style="background-image: url(../Img/General/Bg_Nav.png); background-repeat: no-repeat; background-position: bottom 0 right 0; background-size: 100%">
+        <ul class="Header_NavMb-AccountList">
+            <li class="Header_NavMb-AccountItem">
+                <h6>You have an account</h6>
+                <a class="Header_NavMb-AccountLogInBtn btn btn-primary">
+                    Log In
+                </a>
+            </li>
+            <li class="Header_NavMb-AccountItem">
+                <h6>If not, don't worry</h6>
+                <a class="Header_NavMb-AccountRegisBtn btn btn-primary">
+                    Register
+                </a>
+            </li>
+            <li class="Header_NavMb-AccountItem">
+                <h6>Would you like to receive mail from us?</h6>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Mail" />
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-angle-right"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Form -->
+    <div class="Form">
+        <div class="Form_Bg">
+            <div class="Form_Bg-CloseButton">
+                <i class="fas fa-times fa-2x"></i>
+            </div>
+            <div class="Form_Header">
+                <h3 class="Form_Header-LogInButton">Log In</h3>
+                <h3 class="Form_Header-RegisButton">Register</h3>
+                <div class="Form_Header-Foot">
+                    <div class="Form_Header-FootItem"></div>
+                </div>
+            </div>
+            <!-- Log In -->
+            <div class="Form_LogIn">
+                <div class="Form_LogIn-Conten">
+                    <div>
+                        <input type="email" placeholder="Email address" class="Form_LogIn-ContenUser form-control">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password" class="Form_LogIn-ContenPass form-control">
+                    </div>
+                    <div class="Form_LogIn-ContenDescribe">
+                        <div>
+                            <input type="checkbox" hidden id="RememberPass">
+                            <label for="RememberPass" class="RememberPass_check"></label>
+                            <label for="RememberPass" class="RememberPass_label">Remember</label>
+                        </div>
+                        <a href="">Forgot password?</a>
+                    </div>
+                    <div class="Form_LogIn-ContenLogInBtn">
+                        <button class="btn btn-primary">Log In</button>
+                    </div>
+                    <div class="Form_LogIn-ContenOther">
+                        <div class="OtherGoogle">
+                            <a href="https://www.google.com.vn/"><i class="fab fa-google"></i> Sign in with Google</a>
+                        </div>
+                        <div class="OtherFacebook">
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Sign in with Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Register -->
+            <div class="Form_Regis">
+                <div class="Form_Regis-Conten">
+                    <div class="Form_Regis-ContenName">
+                        <input type="text" placeholder="First name" class=" form-control">
+                        <input type="text" placeholder="Surname" class=" form-control">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email address" class="Form_Regis-ContenUser form-control">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="New Password" class="Form_Regis-ContenPass form-control">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Repeat Password" class="Form_Regis-ContenPass form-control">
+                    </div>
+                    <div class="Agreement">
+                        <p>By <b>Creating account</b>, you agree to our <a href="">User Agreement</a> and acknowledge reading our <a href="">User Privacy Notice</a>.</p>
+                    </div>
+                    <div class="Form_Regis-ContenRegisBtn">
+                        <button class="btn btn-primary">Create account</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <!-- Footer -->
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="Footer container">
+                <div class="row">
+                    <!-- Brand -->
+                    <div class="Footer_Brand col-6 col-md-3 col-lg-3">
+                        <div class="Footer_Brand-Header">
+                            <h3>Brands</h3>
+                        </div>
+                        <div class="Footer_Brand-Conten">
+                            <ul class="Footer_Brand-ContenList">
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Rang Dong</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Philips</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Panasonic</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Comet</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Paragon</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Duhal</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Brand-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Products.html">Anfaco</a>
+                                    </h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Support -->
+                    <div class="Footer_Support col-6 col-md-3 order-md-2 col-lg-3">
+                        <div class="Footer_Support-Header">
+                            <h3>Support</h3>
+                        </div>
+                        <div class="Footer_Support-Conten">
+                            <ul class="Footer_Support-ContenList">
+                                <li class="Footer_Support-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Support.html">Help & Customer Service</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Support-ContenItem">
+                                    <h5>
+                                        <a href="../Htmls/Support.html#FAQ">FAQ</a>
+                                    </h5>
+                                </li>
+                                <li class="Footer_Support-ContenItem">
+                                    <h5>
+                                        <h3>Payment</h3>
+                                        <img src="../Img/General/Payment_Gateways.png" width="80%">
+                                    </h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- About -->
+                    <div class="Footer_About col-12 col-md-6 order-md-1 col-lg-3">
+                        <div class="Footer_About-Header">
+                            <h3>About Us</h3>
+                        </div>
+                        <div class="Footer_About-Conten">
+                            <ul class="Footer_About-ContenList row">
+                                <li class="Footer_About-ContenItem col-6 col-lg-12">
+                                    <h5>
+                                        <a href="../Htmls/AboutUs.html">Bright World</a>
+                                    </h5>
+                                    <p>Launched in 2015, BrightWorld was built to provide high quality LED black products at reasonable prices to users</p>
+                                </li>
+                                <li class="Footer_About-ContenItem col-6 col-lg-12">
+                                    <h5>
+                                        <a href="../Htmls/AboutUs.html#About_Ourjourney">Our journey</a>
+                                    </h5>
+                                    <p>We will constantly develop with faith and hope to be nurtured every day to bring the best values to society.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Connect -->
+                    <div class="Footer_Connect col-12 col-sm-12 order-sm-3 col-lg-3">
+                        <div class="Footer_Connect-Conten">
+                            <ul class="Footer_Connect-ContenList row">
+                                <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                                    <div>
+                                        <i class="fas fa-map-marker-alt fa-lg"></i>
+                                        <h5>Address</h5>
+                                    </div>
+                                    <a href="https://goo.gl/maps/nHFNoHCEfR8hQUjA6">
+                                        <u>Bright World Headquarters:</u><p>6 Le Loi, Hue City, Viet Nam</p>
+                                    </a>
+                                </li>
+                                <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                                    <div>
+                                        <i class="fas fa-phone fa-lg"></i>
+                                        <h5>Phone</h5>
+                                    </div>
+                                    <a href="tel:+(00)123456789">
+                                        <p>+(00)123 456 789</p>
+                                    </a>
+                                    <a href="tel:+(01)147258369">
+                                        <p>+(01)147 258 369</p>
+                                    </a>
+                                </li>
+                                <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                                    <div>
+                                        <i class="fas fa-envelope fa-lg"></i>
+                                        <h5>Mail</h5>
+                                    </div>
+                                    <a href="mailto:hello@brightworld.com">
+                                        <p>hello@brightworld.com</p>
+                                    </a>
+                                </li>
+                                <hr>
+                                <li class="Footer_Connect-ContenItem col-6 col-sm-12 col-md-3 col-lg-12">
+                                    <div class="col-hide col-md-show">
+                                        <i class="fas fa-share-alt fa-lg"></i>
+                                        <h5 class="col-hide">Social:</h5>
+                                    </div>
+                                    <div class="Footer_Connect-ContenItemSocialList">
+                                        <div>
+                                            <a href="https://www.facebook.com/">
+                                                <i class="fab fa-facebook-f fa-lg col-sm-hide"></i>
+                                                <i class="fab fa-facebook-f fa-2x col-hide col-sm-show"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="https://twitter.com/">
+                                                <i class="fab fa-twitter fa-lg col-sm-hide"></i>
+                                                <i class="fab fa-twitter fa-2x col-hide col-sm-show"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="https://www.linkedin.com/">
+                                                <i class="fab fa-linkedin-in fa-lg col-sm-hide"></i>
+                                                <i class="fab fa-linkedin-in fa-2x col-hide col-sm-show"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="https://www.google.com/">
+                                                <i class="fab fa-google fa-lg col-sm-hide"></i>
+                                                <i class="fab fa-google fa-2x col-hide col-sm-show"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <a class="ScrollTop">
+            <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
+        </a>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/JQuery.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/Bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/Main.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

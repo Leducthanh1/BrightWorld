@@ -3,29 +3,189 @@
     ViewBag.Title = "Products";
 }
 
-<link href="~/Content/Css_Js/Css/Products.css">
-<h2>Product</h2>
-<div style="height: 250px;"></div>
-@foreach(var product in Model) {
-   <div class="Product card col-6 col-sm-4 col-lg-3">
-    
-    <a href="../Htmls/ProductDetail.html?id= @product.ID + ">
-        
-        <img class="card-img-top" src="../Img/Product/ data[a]..png">
-        <h6 class="card-title" title=" @product.Name ">@product.Name</h6>
-        <div class="Product_Describe">
-            
-            <p class="card-text"><i> @product.Brand </i></p>
-            <p class="card-text Ra_Value"> data[a].Rate <i class="fas fa-star" style="color: #ffc107;"></i></p>
-            <p class="card-text"><i>@product.Class </i></p>
-            <p class="card-text Pri_Value">$ @product.Price </p>
-            
+<link href="~/Content/Css_Js/Css/Products.css" rel="stylesheet" />
+<!-- Contenct -->
+<main class="main_padding">
+    <img class="Product_Banner" src="../Img/General/Product_Banner.png">
+    <div class="container">
+        <div class="offset-top"></div>
+        <div class="Conten row">
+            <!-- Filter -->
+            <div class="Overlay_Classify"></div>
+            <div class="Classify col-6 col-sm-3 col-lg-2 reset_posi">
+                <div class="Classify_Header">
+                    <h4>Filter</h4>
+                </div>
+                <div class="Classify_Conten">
+                    <div class="Classify_Conten-Header">
+                        <h6>Brands</h6>
+                    </div>
+                    <ul id="Brand" class="Classify_Conten-List">
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="AllBrand" name="Brand">
+                            <label for="AllBrand">All Bands</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="RangDong" name="Brand">
+                            <label for="RangDong">Rang Dong</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Philips" name="Brand">
+                            <label for="Philips">Philips</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Panasonic" name="Brand">
+                            <label for="Panasonic">Panasonic</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Comet" name="Brand">
+                            <label for="Comet">Comet</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Paragon" name="Brand">
+                            <label for="Paragon">Paragon</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Duhal" name="Brand">
+                            <label for="Duhal">Duhal</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Anfaco" name="Brand">
+                            <label for="Anfaco">Anfaco</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Classify_Conten">
+                    <div class="Classify_Conten-Header">
+                        <h6>Category</h6>
+                    </div>
+                    <ul id="Class" class="Classify_Conten-List">
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="AllClass" name="Category">
+                            <label for="AllClass">All Type</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Bulbs" name="Category">
+                            <label for="Bulbs">Bulbs</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Tube" name="Category">
+                            <label for="Tube">Tube</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Decor" name="Category">
+                            <label for="Decor">Decor</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Spotlight" name="Category">
+                            <label for="Spotlight">Spotlight</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Outdoor" name="Category">
+                            <label for="Outdoor">Outdoor</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Panel" name="Category">
+                            <label for="Panel">Panel</label>
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <input type="radio" id="Street" name="Category">
+                            <label for="Street">Street</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Classify_Conten">
+                    <div class="Classify_Conten-Header">
+                        <h6>Price Range</h6>
+                    </div>
+                    <ul class="Classify_Conten-List">
+                        <li class="Classify_Conten-Item">
+                            <input data-filter='Price' type="range" id="Price" name="Price" min="0" max="500" step="10" value="500">
+                        </li>
+                        <li class="Classify_Conten-Item">
+                            <div class="Show_Value">
+                                <p>$0.0</p>
+                                <p>$<span id="Value">500</span>.0</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div id="ApplyFilter" class="ApplyButton btn btn-sm shadow_none">Apply Filter</div>
+                </div>
+            </div>
+            <!-- List Products -->
+            <div class="Products offset-lg-2 col-12 col-lg-10">
+                <div class="row only-lg">
+                    <!-- Header -->
+                    <div class="Products_Header max_width-Products_Header col-12">
+                        <div class="Products_Header-FilterIcon col-lg-hide">
+                            <i class="fas fa-filter fa-lg"></i>
+                        </div>
+                        <div class="Products_Header-Sorted ">
+                            <h5 class="col-hide col-md-show">Sorted:</h5>
+                            <ul class="Products_Header-SortedList">
+                                <li class="Products_Header-SortedItem">
+                                    <select id="Layout">
+                                        <option disabled="">Layout</option>
+                                        <option value="12">12 Product</option>
+                                        <option value="24" selected>24 Product</option>
+                                        <option value="48">48 Product</option>
+                                    </select>
+                                </li>
+                                <li class="Products_Header-SortedItem">
+                                    <select id="Sort">
+                                        <option disabled="">Sorted</option>
+                                        <option value="0" selected>Default</option>
+                                        <option value="1">Price Ascending</option>
+                                        <option value="-1">Price Decrease</option>
+                                        <option value="2">Evalute Ascending</option>
+                                        <option value="-2">Evalute Decrease</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Conten -->
+                    <div class="Products_Content col-12 ">
+                        <div id="Products_Base" class="row">
+                            @foreach (var product in Model)
+                            {
+                                <div class="Product card col-6 col-sm-4 col-lg-3">
+
+                                    <a href="../Htmls/ProductDetail.html?id= @product.ID + ">
+
+                                        <img class="card-img-top" src="../Img/Product/ data[a]..png">
+                                        <h6 class="card-title" title=" @product.Name ">@product.Name</h6>
+                                        <div class="Product_Describe">
+
+                                            <p class="card-text"><i> @product.Brand </i></p>
+                                            <p class="card-text Ra_Value"> @product.ProductFeature.Evalute <i class="fas fa-star" style="color: #ffc107;"></i></p>
+                                            <p class="card-text"><i>@product.Class </i></p>
+                                            <p class="card-text Pri_Value">$ @product.Price </p>
+                                            <div class="Product_Button">
+                                                <div class="AddButton btn btn-outline-primary btn-sm" data-id=" data[a].Id ">Add</div>
+                                                <div class="BuyButton btn btn-primary btn-sm">Buy</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div class="ShowMore_Products">
+                            <div id="ShowMore_Products-Button" class="btn btn-danger btn-sm">Show More</div>
+                            <div id="Products_Full" class="btn btn-outline-secondary btn-block btn-sm disabled">Was Show All</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Popup btn btn-success">
+                <h5>Added to Cart</h5>
+            </div>
         </div>
-        @*<div class="Product_Button">
-             <a class="AddButton btn btn-outline-primary btn-sm" data-id=" data[a].Id ">Add</a>
-             <a class="BuyButton btn btn-primary btn-sm">Buy</a>
-        </div>*@
-    </a>
-</div>
-}
+    </div>
+    @section scripts {
+        <script type="text/javascript" src="~/Scripts/Js/Products.js"></script>
+    }
+</main>
 

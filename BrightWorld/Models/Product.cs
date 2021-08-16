@@ -15,7 +15,7 @@ namespace BrightWorld.Models
         [StringLength(200)]
         public string Name { get; set; }
 
-        public double Price { get; set; }
+        public string Price { get; set; }
 
         [Required]
         [StringLength(50)]

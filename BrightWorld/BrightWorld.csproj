@@ -143,6 +143,26 @@
     <Compile Include="Migrations\202108121256455_update.designer.cs">
       <DependentUpon>202108121256455_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108161159492_Three.cs" />
+    <Compile Include="Migrations\202108161159492_Three.Designer.cs">
+      <DependentUpon>202108161159492_Three.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108161203410_Fo.cs" />
+    <Compile Include="Migrations\202108161203410_Fo.Designer.cs">
+      <DependentUpon>202108161203410_Fo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108161211567_Fi.cs" />
+    <Compile Include="Migrations\202108161211567_Fi.Designer.cs">
+      <DependentUpon>202108161211567_Fi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108161220185_si.cs" />
+    <Compile Include="Migrations\202108161220185_si.Designer.cs">
+      <DependentUpon>202108161220185_si.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108161231114_Sv.cs" />
+    <Compile Include="Migrations\202108161231114_Sv.Designer.cs">
+      <DependentUpon>202108161231114_Sv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BrightWorldContext.cs" />
     <Compile Include="Models\Post.cs" />
@@ -153,10 +173,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Css_Js\Css\AboutUs.css" />
     <Content Include="Content\Css_Js\Css\Bootstrap.css" />
     <Content Include="Content\Css_Js\Css\Cart.css" />
@@ -166,24 +182,18 @@
     <Content Include="Content\Css_Js\Css\ProductDetail.css" />
     <Content Include="Content\Css_Js\Css\Products.css" />
     <Content Include="Content\Css_Js\Css\Support.css" />
-    <Content Include="Content\Css_Js\Js\AboutUs.js" />
-    <Content Include="Content\Css_Js\Js\Bootstrap.js" />
-    <Content Include="Content\Css_Js\Js\Cart.js" />
-    <Content Include="Content\Css_Js\Js\data.js" />
-    <Content Include="Content\Css_Js\Js\FontAwesome.js" />
-    <Content Include="Content\Css_Js\Js\JQuery.js" />
-    <Content Include="Content\Css_Js\Js\Main.js" />
-    <Content Include="Content\Css_Js\Js\ProductDetail.js" />
-    <Content Include="Content\Css_Js\Js\Products.js" />
-    <Content Include="Content\Css_Js\Js\Support.js" />
-    <Content Include="Content\Main.css" />
-    <Content Include="Content\Products.css" />
+    <Content Include="Scripts\Js\AboutUs.js" />
+    <Content Include="Scripts\Js\Bootstrap.js" />
+    <Content Include="Scripts\Js\Cart.js" />
+    <Content Include="Scripts\Js\FontAwesome.js" />
+    <Content Include="Scripts\Js\JQuery.js" />
+    <Content Include="Scripts\Js\Main.js" />
+    <Content Include="Scripts\Js\ProductDetail.js" />
+    <Content Include="Scripts\Js\Products.js" />
+    <Content Include="Scripts\Js\Support.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -198,8 +208,7 @@
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="Content\Css_Js\Css\bootstrap.min.css.map" />
-    <Content Include="Content\Css_Js\Js\bootstrap.min.js.map" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Js\bootstrap.min.js.map" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
     <Content Include="Scripts\ckeditor\ckeditor_basic_source.js" />
@@ -543,16 +552,6 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -579,13 +578,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108121142287_model.resx">
@@ -593,6 +586,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108121256455_update.resx">
       <DependentUpon>202108121256455_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108161159492_Three.resx">
+      <DependentUpon>202108161159492_Three.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108161203410_Fo.resx">
+      <DependentUpon>202108161203410_Fo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108161211567_Fi.resx">
+      <DependentUpon>202108161211567_Fi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108161220185_si.resx">
+      <DependentUpon>202108161220185_si.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108161231114_Sv.resx">
+      <DependentUpon>202108161231114_Sv.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

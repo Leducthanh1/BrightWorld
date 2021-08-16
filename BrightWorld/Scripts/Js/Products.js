@@ -10,7 +10,7 @@ $(document).ready(function() {
 	console.log(Br)
 	console.log(Cl)
 
-// Check Brand link
+/* // Check Brand link 
 	if (Br == 0) {
 		BrandName = '0';
 	}
@@ -131,7 +131,7 @@ $(document).ready(function() {
 				return x;
 			}
 		}
-	};
+	}
 
 	// Apply Filter function
 		function ApplyFilter() {
@@ -302,7 +302,7 @@ $(document).ready(function() {
 			$('#Products_Full').css('display', 'block');
 		}
 		$(window).scrollTop(ScrollLocation);
-	});
+	}); -*/
 
 // Show Classify for Mobile Drive
 	$('.Products_Header-FilterIcon').click(function(event) {
@@ -364,7 +364,7 @@ $(document).ready(function() {
 		console.log(Price);
 	});
 
-// Filter
+/* // Filter
 	// Brand Check
 		$('#AllBrand').change(function(event) {
 			BrandName = '0';
@@ -415,7 +415,7 @@ $(document).ready(function() {
 		});
 		$('#Street').change(function(event) {
 			ClassName = 'Led Street';
-		});
+		}); */
 
 // ApplyFilter Button click event
 	$('#ApplyFilter').click(function(event) {
@@ -430,7 +430,7 @@ $(document).ready(function() {
 	var X = ($('.Products_Header').height()) + 5;
 	$('.Products_Content').css('margin-top', X);
 
-// Add Producs
+/* // Add Producs
 	$('.AddButton').click(function(event) {
 		$('.Popup').fadeIn('1000').delay(1000).fadeOut('1000');
 		$('#Empty').addClass('none');
@@ -449,4 +449,4 @@ $(document).ready(function() {
 			'</li>'
 		)
 	});
-});
+});*/
