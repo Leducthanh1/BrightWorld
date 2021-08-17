@@ -1,0 +1,121 @@
+﻿@model IEnumerable<BrightWorld.Models.Product>
+@{
+    ViewBag.Title = "ProductsDetail";
+}
+
+<link href="~/Content/Css_Js/Css/ProductDetail.css" rel="stylesheet" />
+
+@foreach (var Product in Model)
+{
+    <main class="main_padding">
+        <div class="container">
+            <div class="row">
+                <!-- Product Infomation -->
+                <div class="Product_Info col-12">
+                    <div class="row">
+                        <div class="Product_Img col-12 col-md-7 col-lg-5"></div>
+                        <div class="Product_Detail col-12 col-md-5 col-lg-7">
+                            <h3 id="Name" class="marginTop-lg-25">@Product.Name</h3>
+                            <ul class="Product_Detail-List">
+                                <li id="Evalute">
+                                    @Product.ProductFeature.Evalute
+                                </li>
+                                <li>
+                                    <h6>123 Review</h6>
+                                </li>
+                                <li>
+                                    <h6>Sold: 198</h6>
+                                </li>
+                            </ul>
+                            <div class="Product_Detail-Price">
+                                <h4><strike>$<span id="FakePrice"></span></strike></h4>
+                                <h2>$<span id="Price">@Product.Price</span></h2>
+                            </div>
+                            <div class="Product_FreeShip">
+                                <i class="fas fa-truck-moving" style="margin: 0 15px"></i>
+                                <h6>Free Express Delivery</h6>
+                            </div>
+                            <table class="Product_Detail-Amount">
+                                <tr>
+                                    <td class="AmountMinus">
+                                        <i class="fas fa-minus" style="color: var(--blue1_color);"></i>
+                                    </td>
+                                    <td>
+                                        <input id="Amount" type="text" value="1">
+                                    </td>
+                                    <td class="AmountPlus">
+                                        <i class="fas fa-plus" style="color: var(--blue1_color);"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="Product_Button posi-md-rela">
+                                <div id="AddButton" class="btn btn-outline-primary margin-md-15">Add</div>
+                                <div id="BuyButton" class="btn btn-primary margin-md-15">Buy Now</div>
+                            </div>
+                            <div class="Product_Commitment">
+                                <div>
+                                    <i class="fas fa-user-shield"></i>
+                                    <p><b>Commitment: </b>return/refund</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-tools"></i>
+                                    <p><b>24/7</b> installation support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Describle -->
+                <div class="Product_Describle col-12 col-lg-7">
+                    <div class="row">
+                        <div class="Product_Describle-Quickview col-12 col-sm-6">
+                            <h4>Product information</h4>
+                            <div>
+                                <ul class="Product_Describle-QuickviewName">
+                                    <li>Manufacturer</li>
+                                    <li>Classification</li>
+                                    <li>Voltage</li>
+                                    <li>Wattage</li>
+                                    <li>Longevity</li>
+                                </ul>
+                                <ul class="Product_Describle-QuickviewConten">
+                                    <li>: <span id="Br">@Product.Brand</span></li>
+                                    <li>: <span id="Cl">@Product.Class</span></li>
+                                    <li>: <span id="V">@Product.ProductFeature.Vol</span> (Volt)</li>
+                                    <li>: <span id="W">@Product.ProductFeature.Wat</span> (Watt)</li>
+                                    <li>: > 50.000h</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="Product_Describle-Conten col-12 col-sm-6">
+                            <h4>Product Description</h4>
+                            <p id="Dc">@Product.ProductFeature.Dc</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Review -->
+                <div class="Product_Review col-12 col-lg-5">
+                    <h4>Featured review</h4>
+                    <ul>
+                        <li>
+                            <h6>Robert Downey Jr</h6>
+                            <p id="Cm1">@Product.ProductFeature.Cm1</p>
+                        </li>
+                        <li>
+                            <h6>Chris Evans</h6>
+                            <p id="Cm2">@Product.ProductFeature.Cm2</p>
+                        </li>
+                        <li>
+                            <h6>Tom Holland</h6>
+                            <p id="Cm3">@Product.ProductFeature.Cm3</p>
+                        </li>
+                        <li class="Comment">
+                            <input class="input" type="text" name="Comment" placeholder="Leave your comment">
+                            <div class="Comment_Button btn btn-outline-primary">Send</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+}

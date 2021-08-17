@@ -1,5 +1,5 @@
 $(document).ready(function() {
-// Get Class or Brand from url
+/*// Get Class or Brand from url
 	var url_string = $(location).attr('href')
 	var url = new URL(url_string);
 	var Br = (Number(url.searchParams.get("br")));
@@ -10,7 +10,7 @@ $(document).ready(function() {
 	console.log(Br)
 	console.log(Cl)
 
-/* // Check Brand link 
+// Check Brand link
 	if (Br == 0) {
 		BrandName = '0';
 	}
@@ -131,7 +131,7 @@ $(document).ready(function() {
 				return x;
 			}
 		}
-	}
+	};
 
 	// Apply Filter function
 		function ApplyFilter() {
@@ -302,7 +302,7 @@ $(document).ready(function() {
 			$('#Products_Full').css('display', 'block');
 		}
 		$(window).scrollTop(ScrollLocation);
-	}); -*/
+	});*/
 
 // Show Classify for Mobile Drive
 	$('.Products_Header-FilterIcon').click(function(event) {
@@ -364,7 +364,7 @@ $(document).ready(function() {
 		console.log(Price);
 	});
 
-/* // Filter
+/*// Filter
 	// Brand Check
 		$('#AllBrand').change(function(event) {
 			BrandName = '0';
@@ -415,7 +415,7 @@ $(document).ready(function() {
 		});
 		$('#Street').change(function(event) {
 			ClassName = 'Led Street';
-		}); */
+		});
 
 // ApplyFilter Button click event
 	$('#ApplyFilter').click(function(event) {
@@ -424,29 +424,29 @@ $(document).ready(function() {
 		$('.Overlay_Classify').removeClass('block');
 		data = Filter(BrandName, ClassName, Price);
 		ApplyFilter(data);
-	});
+	});*/
 
 // Offset Header
 	var X = ($('.Products_Header').height()) + 5;
 	$('.Products_Content').css('margin-top', X);
 
-/* // Add Producs
-	$('.AddButton').click(function(event) {
-		$('.Popup').fadeIn('1000').delay(1000).fadeOut('1000');
-		$('#Empty').addClass('none');
+/*//add producs
+	$('.addbutton').click(function(event) {
+		$('.popup').fadein('1000').delay(1000).fadeout('1000');
+		$('#empty').addclass('none');
 		var x = ($(this).attr('data-id')) - 1;
-		$('.Header_NavMb-CartList').append(
-			'<li class="Header_NavMb-CartItem">' +
-				'<a href="Htmls/ProductDetail.html?id=' + data[x].Id + '">' +
-					'<img src="../Img/Product/' + data[x].I1 + '.png">' +
+		$('.header_navmb-cartlist').append(
+			'<li class="header_navmb-cartitem">' +
+				'<a href="htmls/productdetail.html?id=' + data[x].id + '">' +
+					'<img src="../img/product/' + data[x].i1 + '.png">' +
 					'<div>' +
-						'<h6>'+ data[x].Name +'</h6>' +
-						'<span> '+ data[x].Br +' / </span>' +
-						'<span> '+ data[x].Cl +' </span>' +
-						'<p>'+ data[x].Price +'$</p>' +
+						'<h6>'+ data[x].name +'</h6>' +
+						'<span> '+ data[x].br +' / </span>' +
+						'<span> '+ data[x].cl +' </span>' +
+						'<p>'+ data[x].price +'$</p>' +
 					'</div>' +
 				'</a>' +
 			'</li>'
 		)
-	});
-});*/
+	});*/
+});

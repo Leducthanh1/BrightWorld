@@ -14,18 +14,26 @@ namespace BrightWorld.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            string categoryId = (Request.Params.Get("category"));
+            string BrandName = (Request.Params.Get("Brand"));
             IEnumerable<Product> products;
-            if(!string.IsNullOrEmpty(categoryId))
+            if(!string.IsNullOrEmpty(BrandName))
             {
                 //products = db.Products.Include(p => p.Product)
                 //    .Include(p => p.)
-                 products = db.Products.Include(p=>p.ProductFeature).Where(p => p.Class == categoryId);
+                 products = db.Products.Include(p=>p.ProductFeature).Where(p => p.Brand == BrandName);
             }
             else
             {
                 products = db.Products;
             }
+            return View(products);
+        }
+        
+        public ActionResult Detail(int id)
+        {
+            //int ProductId = int.Parse(Request.Params.Get("id"));
+            IEnumerable<Product> products;
+            products = db.Products.Include(p => p.ProductFeature).Where(p => p.ID == id);
             return View(products);
         }
     }

@@ -8,8 +8,9 @@
     <link href="~/Content/Css_Js/Css/FontAwesome.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Main.css" rel="stylesheet" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/JQuery.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/Bootstrap.js"></script>
 </head>
 <body>
 
@@ -42,7 +43,7 @@
                         <div class="DarkMode_btn">
                             <span class="DarkMode_Icon">
                                 <i class="fas fa-store"></i>
-                                <p>Our Store</p>
+                                <span>Our Store</span>
                             </span>
                         </div>
                     </li>
@@ -75,7 +76,7 @@
                             <div class="Header_Nav-LinkFoot"></div>
                         </li>
                         <li class="Header_Nav-LinkItem">
-                            @Html.ActionLink("Products","Index","Products")
+                            @Html.ActionLink("Products", "Index", "Products")
                             <div class="Header_Nav-LinkFoot"></div>
                         </li>
                         <li class="Header_Nav-LinkItem">
@@ -435,10 +436,10 @@
             <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
         </a>
     </div>
-    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
-    <script type="text/javascript" src="~/Scripts/Js/JQuery.js"></script>
-    <script type="text/javascript" src="~/Scripts/Js/Bootstrap.js"></script>
+    @*@Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)*@
     <script type="text/javascript" src="~/Scripts/Js/Main.js"></script>
-    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/Scripts/Js/Products.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/ProductDetail.js"></script>
 </body>
 </html>

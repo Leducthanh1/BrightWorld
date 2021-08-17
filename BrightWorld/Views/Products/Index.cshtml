@@ -152,8 +152,7 @@
                             @foreach (var product in Model)
                             {
                                 <div class="Product card col-6 col-sm-4 col-lg-3">
-
-                                    <a href="../Htmls/ProductDetail.html?id= @product.ID + ">
+                                    <a href="@Url.Action("Detail", "Products", new { id = product.ID})">
 
                                         <img class="card-img-top" src="../Img/Product/ data[a]..png">
                                         <h6 class="card-title" title=" @product.Name ">@product.Name</h6>
@@ -184,8 +183,5 @@
             </div>
         </div>
     </div>
-    @section scripts {
-        <script type="text/javascript" src="~/Scripts/Js/Products.js"></script>
-    }
 </main>
 

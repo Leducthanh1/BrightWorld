@@ -182,15 +182,6 @@
     <Content Include="Content\Css_Js\Css\ProductDetail.css" />
     <Content Include="Content\Css_Js\Css\Products.css" />
     <Content Include="Content\Css_Js\Css\Support.css" />
-    <Content Include="Scripts\Js\AboutUs.js" />
-    <Content Include="Scripts\Js\Bootstrap.js" />
-    <Content Include="Scripts\Js\Cart.js" />
-    <Content Include="Scripts\Js\FontAwesome.js" />
-    <Content Include="Scripts\Js\JQuery.js" />
-    <Content Include="Scripts\Js\Main.js" />
-    <Content Include="Scripts\Js\ProductDetail.js" />
-    <Content Include="Scripts\Js\Products.js" />
-    <Content Include="Scripts\Js\Support.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -208,7 +199,6 @@
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="Content\Css_Js\Css\bootstrap.min.css.map" />
-    <Content Include="Scripts\Js\bootstrap.min.js.map" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
     <Content Include="Scripts\ckeditor\ckeditor_basic_source.js" />
@@ -552,6 +542,16 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="Scripts\Js\AboutUs.js" />
+    <Content Include="Scripts\Js\Bootstrap.js" />
+    <Content Include="Scripts\Js\bootstrap.min.js.map" />
+    <Content Include="Scripts\Js\Cart.js" />
+    <Content Include="Scripts\Js\FontAwesome.js" />
+    <Content Include="Scripts\Js\JQuery.js" />
+    <Content Include="Scripts\Js\Main.js" />
+    <Content Include="Scripts\Js\ProductDetail.js" />
+    <Content Include="Scripts\Js\Products.js" />
+    <Content Include="Scripts\Js\Support.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -579,6 +579,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\Products\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108121142287_model.resx">

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var data = DATA;
-// Get Id from url
+/*// Get Id from url
 	var url_string = $(location).attr('href')
 	var url = new URL(url_string);
 	var X = (Number(url.searchParams.get("id"))) - 1;
@@ -63,7 +63,7 @@ $(document).ready(function() {
 	$('#Cm1').html(data[X].Cm1);
 	$('#Cm2').html(data[X].Cm2);
 	$('#Cm3').html(data[X].Cm3);
-
+*/
 // Amount Button Chage Value event
 	$('#Amount').change(function(event) {
 		$(this).val();
