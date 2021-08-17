@@ -8,9 +8,10 @@
     <link href="~/Content/Css_Js/Css/FontAwesome.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Main.css" rel="stylesheet" />
-    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
     <script type="text/javascript" src="~/Scripts/Js/JQuery.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
     <script type="text/javascript" src="~/Scripts/Js/Bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/Main.js"></script>
 </head>
 <body>
 
@@ -80,11 +81,11 @@
                             <div class="Header_Nav-LinkFoot"></div>
                         </li>
                         <li class="Header_Nav-LinkItem">
-                            <a class="nav-link" href="../Htmls/AboutUs.html">About Us</a>
+                            @Html.ActionLink("About Us", "Index", "About")
                             <div class="Header_Nav-LinkFoot"></div>
                         </li>
                         <li class="Header_Nav-LinkItem">
-                            <a class="nav-link" href="../Htmls/Support.html">Support</a>
+                            @Html.ActionLink("Support", "Index", "Support")
                             <div class="Header_Nav-LinkFoot"></div>
                         </li>
                     </ul>
@@ -127,16 +128,16 @@
     <div class="Header_NavMb-Link" style="background-image: url(../Img/General/Bg_Nav.png); background-repeat: no-repeat; background-position: bottom 0 right 0; background-size: 100%;">
         <ul class="Header_NavMb-LinkList">
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="../Home.html"><i class="fas fa-home"></i> Home</a>
+                <a class="" href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="../Htmls/Products.html"><i class="fas fa-store"></i> Products</a>
+                <a class="" href="@Url.Action("Index", "Products")"><i class="fas fa-store"></i> Products</a>
             </li>
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="../Htmls/AboutUs.html"><i class="fas fa-users"></i> About Us</a>
+                <a class="" href="@Url.Action("Index", "About")"><i class="fas fa-users"></i> About Us</a>
             </li>
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="../Htmls/Support.html"><i class="fas fa-cog"></i> Support</a>
+                <a class="" href="@Url.Action("Index", "Support")"><i class="fas fa-cog"></i> Support</a>
             </li>
         </ul>
     </div>
@@ -438,7 +439,6 @@
     </div>
     @*@Scripts.Render("~/bundles/modernizr")
     @RenderSection("scripts", required: false)*@
-    <script type="text/javascript" src="~/Scripts/Js/Main.js"></script>
     <script type="text/javascript" src="~/Scripts/Js/Products.js"></script>
     <script type="text/javascript" src="~/Scripts/Js/ProductDetail.js"></script>
 </body>
