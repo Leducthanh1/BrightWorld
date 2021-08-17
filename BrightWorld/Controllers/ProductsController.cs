@@ -14,13 +14,13 @@ namespace BrightWorld.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            string BrandName = (Request.Params.Get("Brand"));
+            string FilterID = (Request.Params.Get("Filter"));
             IEnumerable<Product> products;
-            if(!string.IsNullOrEmpty(BrandName))
+            if(!string.IsNullOrEmpty(FilterID))
             {
                 //products = db.Products.Include(p => p.Product)
                 //    .Include(p => p.)
-                 products = db.Products.Include(p=>p.ProductFeature).Where(p => p.Brand == BrandName);
+                 products = db.Products.Include(p=>p.ProductFeature).Where(p => p.Brand == FilterID);
             }
             else
             {
