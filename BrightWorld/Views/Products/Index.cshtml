@@ -1,12 +1,16 @@
 ﻿@model IEnumerable<BrightWorld.Models.Product>
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Bright World | Products";
 }
 
 <link href="~/Content/Css_Js/Css/Products.css" rel="stylesheet" />
+@section IconPage {
+    <i class="fas fa-store"></i>
+    <p>Our Store</p>
+}
 <!-- Contenct -->
 <main class="main_padding">
-    <img class="Product_Banner" src="../Img/General/Product_Banner.png">
+    <img class="Product_Banner" src="~/Content/Img/Genneral/Product_Hero_Img.png">
     <div class="container">
         <div class="offset-top"></div>
         <div class="Conten row">
@@ -152,7 +156,7 @@
                             @foreach (var product in Model)
                             {
                                 <div class="Product card col-6 col-sm-4 col-lg-3">
-                                    <a href="@Url.Action("Detail", "Products", new { id = product.ID})">
+                                    <a href="@Url.Action("Detail", "Products", new {id =product.ID})">
 
                                         <img class="card-img-top" src="../Img/Product/ data[a]..png">
                                         <h6 class="card-title" title=" @product.Name ">@product.Name</h6>
@@ -184,4 +188,7 @@
         </div>
     </div>
 </main>
+@section BodyScripts {
+    <script type="text/javascript" src="~/Scripts/Js/Products.js"></script>
+}
 

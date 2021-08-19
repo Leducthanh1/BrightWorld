@@ -10,6 +10,8 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+           // AutomaticMigrationDataLossAllowed = true;
+
         }
 
         protected override void Seed(BrightWorld.Models.BrightWorldContext context)

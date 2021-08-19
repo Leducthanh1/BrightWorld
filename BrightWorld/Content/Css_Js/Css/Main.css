@@ -605,6 +605,7 @@
     background-color: var(--blue3_color);
     color: var(--dark2_color);
     padding-bottom: 100px;
+    width: 100%;
   }
 
   .Footer {

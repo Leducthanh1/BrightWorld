@@ -1,12 +1,18 @@
 ﻿@model IEnumerable<BrightWorld.Models.Product>
 @{
-    ViewBag.Title = "ProductsDetail";
+    ViewBag.Title = "Bright World | Details";
 }
 
 <link href="~/Content/Css_Js/Css/ProductDetail.css" rel="stylesheet" />
+@section IconPage {
+    <i class="fas fa-store"></i>
+    <p>Our Store</p>
+}
 
 @foreach (var Product in Model)
 {
+    var FakePrice = 0d;
+    FakePrice = Math.Round((float.Parse(Product.Price) / 100 * 20), 2) + Math.Round(float.Parse(Product.Price), 2);
     <main class="main_padding">
         <div class="container">
             <div class="row">
@@ -28,7 +34,7 @@
                                 </li>
                             </ul>
                             <div class="Product_Detail-Price">
-                                <h4><strike>$<span id="FakePrice"></span></strike></h4>
+                                <h4><strike>$<span id="FakePrice">@FakePrice</span></strike></h4>
                                 <h2>$<span id="Price">@Product.Price</span></h2>
                             </div>
                             <div class="Product_FreeShip">
@@ -118,4 +124,7 @@
             </div>
         </div>
     </main>
+}
+@section BodyScripts {
+    <script type="text/javascript" src="~/Scripts/Js/ProductDetail.js"></script>
 }

@@ -2,14 +2,18 @@
     ViewBag.Title = "Bright World | Support";
 }
 
-<link href="~/Content/Css_Js/Css/Support.css" rel="stylesheet"/>
+<link href="~/Content/Css_Js/Css/Support.css" rel="stylesheet" />
+@section IconPage {
+    <i class="fas fa-cog"></i>
+    <p>Support</p>
+}
 
 <main class="main_padding">
     <div class="container">
         <div class="row Conten">
             <!-- Header -->
             <div class="col-12 Conten_Header">
-                <img src="../Img/General/BgSupport.jpg">
+                <img src="~/Content/Img/Genneral/Support_Hero_Img.jpg">
                 <div class="Conten_Header-SearchBox">
                     <input type="text" name="" placeholder="What can we do for you?">
                     <div class="btn btn-primary"><i class="fas fa-search"></i></div>
@@ -74,3 +78,6 @@
             </div>
         </div>
 </main>
+@section BodyScripts {
+    <script type="text/javascript" src="~/Scripts/Js/Support.js"></script>
+}

@@ -3,38 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title | BrightWorld</title>
+    <title>@ViewBag.Title</title>
     <link rel="shortcut icon" type="image/png" href="Img/General/favicon.png">
     <link href="~/Content/Css_Js/Css/FontAwesome.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Css_Js/Css/Main.css" rel="stylesheet" />
-    <script type="text/javascript" src="~/Scripts/Js/JQuery.js"></script>
-    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
-    <script type="text/javascript" src="~/Scripts/Js/Bootstrap.js"></script>
-    <script type="text/javascript" src="~/Scripts/Js/Main.js"></script>
 </head>
 <body>
-
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
-    <!-- Header -->
     <header>
         <div class="container">
             <!-- Header Top Info -->
@@ -43,8 +18,7 @@
                     <li class="Header_Info-Item">
                         <div class="DarkMode_btn">
                             <span class="DarkMode_Icon">
-                                <i class="fas fa-store"></i>
-                                <span>Our Store</span>
+                                @RenderSection("IconPage", required: false)
                             </span>
                         </div>
                     </li>
@@ -68,7 +42,7 @@
             <!-- Nav Bar -->
             <div class="Header_Nav row">
                 <div class="col-4 col-sm-3">
-                    <a class="Header_Nav-Logo" href="../Home.html"><img src="../Img/General/Full_Logo.png" width="100%"></a>
+                    <a class="Header_Nav-Logo" href="@Url.Action("Index", "Home")"><img src="~/Content/Img/Genneral/Full_Logo.png" width="100%"></a>
                 </div>
                 <div class="Header_Nav-Link col-hide col-lg-6 col-lg-show">
                     <ul class="Header_Nav-LinkList">
@@ -128,16 +102,16 @@
     <div class="Header_NavMb-Link" style="background-image: url(../Img/General/Bg_Nav.png); background-repeat: no-repeat; background-position: bottom 0 right 0; background-size: 100%;">
         <ul class="Header_NavMb-LinkList">
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a>
+                <a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="@Url.Action("Index", "Products")"><i class="fas fa-store"></i> Products</a>
+                <a href="@Url.Action("Index", "Products")"><i class="fas fa-store"></i> Products</a>
             </li>
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="@Url.Action("Index", "About")"><i class="fas fa-users"></i> About Us</a>
+                <a href="@Url.Action("Index", "About")"><i class="fas fa-users"></i> About Us</a>
             </li>
             <li class="Header_NavMb-LinkItem">
-                <a class="" href="@Url.Action("Index", "Support")"><i class="fas fa-cog"></i> Support</a>
+                <a href="@Url.Action("Index", "Support")"><i class="fas fa-cog"></i> Support</a>
             </li>
         </ul>
     </div>
@@ -260,186 +234,187 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <!-- Footer -->
-        <footer>
-            <div class="Footer container">
-                <div class="row">
-                    <!-- Brand -->
-                    <div class="Footer_Brand col-6 col-md-3 col-lg-3">
-                        <div class="Footer_Brand-Header">
-                            <h3>Brands</h3>
-                        </div>
-                        <div class="Footer_Brand-Conten">
-                            <ul class="Footer_Brand-ContenList">
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Rang Dong</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Philips</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Panasonic</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Comet</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Paragon</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Duhal</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Brand-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Products.html">Anfaco</a>
-                                    </h5>
-                                </li>
-                            </ul>
-                        </div>
+    @RenderBody()
+    <!-- Footer -->
+    <footer>
+        <div class="Footer container">
+            <div class="row">
+                <!-- Brand -->
+                <div class="Footer_Brand col-6 col-md-3 col-lg-3">
+                    <div class="Footer_Brand-Header">
+                        <h3>Brands</h3>
                     </div>
-                    <!-- Support -->
-                    <div class="Footer_Support col-6 col-md-3 order-md-2 col-lg-3">
-                        <div class="Footer_Support-Header">
-                            <h3>Support</h3>
-                        </div>
-                        <div class="Footer_Support-Conten">
-                            <ul class="Footer_Support-ContenList">
-                                <li class="Footer_Support-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Support.html">Help & Customer Service</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Support-ContenItem">
-                                    <h5>
-                                        <a href="../Htmls/Support.html#FAQ">FAQ</a>
-                                    </h5>
-                                </li>
-                                <li class="Footer_Support-ContenItem">
-                                    <h5>
-                                        <h3>Payment</h3>
-                                        <img src="../Img/General/Payment_Gateways.png" width="80%">
-                                    </h5>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="Footer_Brand-Conten">
+                        <ul class="Footer_Brand-ContenList">
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Rang Dong</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Philips</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Panasonic</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Comet</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Paragon</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Duhal</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Brand-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Products.html">Anfaco</a>
+                                </h5>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- About -->
-                    <div class="Footer_About col-12 col-md-6 order-md-1 col-lg-3">
-                        <div class="Footer_About-Header">
-                            <h3>About Us</h3>
-                        </div>
-                        <div class="Footer_About-Conten">
-                            <ul class="Footer_About-ContenList row">
-                                <li class="Footer_About-ContenItem col-6 col-lg-12">
-                                    <h5>
-                                        <a href="../Htmls/AboutUs.html">Bright World</a>
-                                    </h5>
-                                    <p>Launched in 2015, BrightWorld was built to provide high quality LED black products at reasonable prices to users</p>
-                                </li>
-                                <li class="Footer_About-ContenItem col-6 col-lg-12">
-                                    <h5>
-                                        <a href="../Htmls/AboutUs.html#About_Ourjourney">Our journey</a>
-                                    </h5>
-                                    <p>We will constantly develop with faith and hope to be nurtured every day to bring the best values to society.</p>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                <!-- Support -->
+                <div class="Footer_Support col-6 col-md-3 order-md-2 col-lg-3">
+                    <div class="Footer_Support-Header">
+                        <h3>Support</h3>
                     </div>
-                    <!-- Connect -->
-                    <div class="Footer_Connect col-12 col-sm-12 order-sm-3 col-lg-3">
-                        <div class="Footer_Connect-Conten">
-                            <ul class="Footer_Connect-ContenList row">
-                                <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                    <div class="Footer_Support-Conten">
+                        <ul class="Footer_Support-ContenList">
+                            <li class="Footer_Support-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Support.html">Help & Customer Service</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Support-ContenItem">
+                                <h5>
+                                    <a href="../Htmls/Support.html#FAQ">FAQ</a>
+                                </h5>
+                            </li>
+                            <li class="Footer_Support-ContenItem">
+                                <h5>
+                                    <h3>Payment</h3>
+                                    <img src="~/Content/Img/Genneral/Payment_Gateways.png" width="80%">
+                                </h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- About -->
+                <div class="Footer_About col-12 col-md-6 order-md-1 col-lg-3">
+                    <div class="Footer_About-Header">
+                        <h3>About Us</h3>
+                    </div>
+                    <div class="Footer_About-Conten">
+                        <ul class="Footer_About-ContenList row">
+                            <li class="Footer_About-ContenItem col-6 col-lg-12">
+                                <h5>
+                                    <a href="../Htmls/AboutUs.html">Bright World</a>
+                                </h5>
+                                <p>Launched in 2015, BrightWorld was built to provide high quality LED black products at reasonable prices to users</p>
+                            </li>
+                            <li class="Footer_About-ContenItem col-6 col-lg-12">
+                                <h5>
+                                    <a href="../Htmls/AboutUs.html#About_Ourjourney">Our journey</a>
+                                </h5>
+                                <p>We will constantly develop with faith and hope to be nurtured every day to bring the best values to society.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Connect -->
+                <div class="Footer_Connect col-12 col-sm-12 order-sm-3 col-lg-3">
+                    <div class="Footer_Connect-Conten">
+                        <ul class="Footer_Connect-ContenList row">
+                            <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                                <div>
+                                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                                    <h5>Address</h5>
+                                </div>
+                                <a href="https://goo.gl/maps/nHFNoHCEfR8hQUjA6">
+                                    <u>Bright World Headquarters:</u><p>6 Le Loi, Hue City, Viet Nam</p>
+                                </a>
+                            </li>
+                            <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                                <div>
+                                    <i class="fas fa-phone fa-lg"></i>
+                                    <h5>Phone</h5>
+                                </div>
+                                <a href="tel:+(00)123456789">
+                                    <p>+(00)123 456 789</p>
+                                </a>
+                                <a href="tel:+(01)147258369">
+                                    <p>+(01)147 258 369</p>
+                                </a>
+                            </li>
+                            <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
+                                <div>
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                    <h5>Mail</h5>
+                                </div>
+                                <a href="mailto:hello@brightworld.com">
+                                    <p>hello@brightworld.com</p>
+                                </a>
+                            </li>
+                            <hr>
+                            <li class="Footer_Connect-ContenItem col-6 col-sm-12 col-md-3 col-lg-12">
+                                <div class="col-hide col-md-show">
+                                    <i class="fas fa-share-alt fa-lg"></i>
+                                    <h5 class="col-hide">Social:</h5>
+                                </div>
+                                <div class="Footer_Connect-ContenItemSocialList">
                                     <div>
-                                        <i class="fas fa-map-marker-alt fa-lg"></i>
-                                        <h5>Address</h5>
+                                        <a href="https://www.facebook.com/">
+                                            <i class="fab fa-facebook-f fa-lg col-sm-hide"></i>
+                                            <i class="fab fa-facebook-f fa-2x col-hide col-sm-show"></i>
+                                        </a>
                                     </div>
-                                    <a href="https://goo.gl/maps/nHFNoHCEfR8hQUjA6">
-                                        <u>Bright World Headquarters:</u><p>6 Le Loi, Hue City, Viet Nam</p>
-                                    </a>
-                                </li>
-                                <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
                                     <div>
-                                        <i class="fas fa-phone fa-lg"></i>
-                                        <h5>Phone</h5>
+                                        <a href="https://twitter.com/">
+                                            <i class="fab fa-twitter fa-lg col-sm-hide"></i>
+                                            <i class="fab fa-twitter fa-2x col-hide col-sm-show"></i>
+                                        </a>
                                     </div>
-                                    <a href="tel:+(00)123456789">
-                                        <p>+(00)123 456 789</p>
-                                    </a>
-                                    <a href="tel:+(01)147258369">
-                                        <p>+(01)147 258 369</p>
-                                    </a>
-                                </li>
-                                <li class="Footer_Connect-ContenItem col-6 col-sm-4 col-md-3 col-lg-12">
                                     <div>
-                                        <i class="fas fa-envelope fa-lg"></i>
-                                        <h5>Mail</h5>
+                                        <a href="https://www.linkedin.com/">
+                                            <i class="fab fa-linkedin-in fa-lg col-sm-hide"></i>
+                                            <i class="fab fa-linkedin-in fa-2x col-hide col-sm-show"></i>
+                                        </a>
                                     </div>
-                                    <a href="mailto:hello@brightworld.com">
-                                        <p>hello@brightworld.com</p>
-                                    </a>
-                                </li>
-                                <hr>
-                                <li class="Footer_Connect-ContenItem col-6 col-sm-12 col-md-3 col-lg-12">
-                                    <div class="col-hide col-md-show">
-                                        <i class="fas fa-share-alt fa-lg"></i>
-                                        <h5 class="col-hide">Social:</h5>
+                                    <div>
+                                        <a href="https://www.google.com/">
+                                            <i class="fab fa-google fa-lg col-sm-hide"></i>
+                                            <i class="fab fa-google fa-2x col-hide col-sm-show"></i>
+                                        </a>
                                     </div>
-                                    <div class="Footer_Connect-ContenItemSocialList">
-                                        <div>
-                                            <a href="https://www.facebook.com/">
-                                                <i class="fab fa-facebook-f fa-lg col-sm-hide"></i>
-                                                <i class="fab fa-facebook-f fa-2x col-hide col-sm-show"></i>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://twitter.com/">
-                                                <i class="fab fa-twitter fa-lg col-sm-hide"></i>
-                                                <i class="fab fa-twitter fa-2x col-hide col-sm-show"></i>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.linkedin.com/">
-                                                <i class="fab fa-linkedin-in fa-lg col-sm-hide"></i>
-                                                <i class="fab fa-linkedin-in fa-2x col-hide col-sm-show"></i>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://www.google.com/">
-                                                <i class="fab fa-google fa-lg col-sm-hide"></i>
-                                                <i class="fab fa-google fa-2x col-hide col-sm-show"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </footer>
-        <a class="ScrollTop">
-            <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
-        </a>
+        </div>
+    </footer>
+    <a class="ScrollTop">
+        <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
+    </a>
     </div>
     @*@Scripts.Render("~/bundles/modernizr")
-    @RenderSection("scripts", required: false)*@
-    <script type="text/javascript" src="~/Scripts/Js/Products.js"></script>
-    <script type="text/javascript" src="~/Scripts/Js/ProductDetail.js"></script>
+        @RenderSection("scripts", required: false)*@
+    <script type="text/javascript" src="~/Scripts/Js/JQuery.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/FontAwesome.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/Bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/Js/Main.js"></script>
+    @RenderSection("BodyScripts", required: false)
 </body>
 </html>
