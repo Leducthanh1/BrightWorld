@@ -1,5 +1,6 @@
 namespace BrightWorld.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -40,6 +41,7 @@ namespace BrightWorld.Models
         [Column(TypeName = "ntext")]
         public string Dc { get; set; }
 
+       // [JsonIgnore]
         public virtual Product Product { get; set; }
     }
 }

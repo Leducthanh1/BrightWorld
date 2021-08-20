@@ -15,20 +15,31 @@ namespace BrightWorld.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            string Brand = (Request.Params.Get("Brand"));
+            return View();
+        }
+        [HttpGet]
+        public string LoadData()
+        {
             string Category = (Request.Params.Get("Category"));
-            string Price = (Request.Params.Get("Price"));
             IEnumerable<Product> products;
             if (!string.IsNullOrEmpty(Category))
             {
-                products = db.Products.Include(p => p.ProductFeature).Where(p => (p.Class == Category));
+                products = db.Products.Include(p => p.ProductFeature).Where(p => (p.Class == Category)).ToList();
             }
             else
             {
-                products = db.Products;
+                products = db.Products.ToList();
             }
-            //string Data = JsonConvert.SerializeObject(products);
-            return View(products);
+
+            var settings = new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                Error = (sender, args) =>
+                {
+                    args.ErrorContext.Handled = true;
+                },
+            };
+            return JsonConvert.SerializeObject(products, settings);
         }
 
         //public ActionResult Index()
@@ -46,7 +57,7 @@ namespace BrightWorld.Controllers
         //        brand = db.Products.Include(p => p.ProductFeature).Where(p => (p.Brand == Brand));
         //    }
         //    else
-        //    {
+        //    { 
         //        brand = db.Products;
         //    }
         //    //Filter Class

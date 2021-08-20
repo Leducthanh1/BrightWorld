@@ -1,5 +1,6 @@
 namespace BrightWorld.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -25,6 +26,8 @@ namespace BrightWorld.Models
         [StringLength(50)]
         public string Class { get; set; }
 
+
+       // [JsonIgnore]
         public virtual ProductFeature ProductFeature { get; set; }
 
         //public virtual Product Products1 { get; set; }
@@ -34,6 +37,7 @@ namespace BrightWorld.Models
         //public virtual Product Products11 { get; set; }
 
         //public virtual Product Product2 { get; set; }
+       // [JsonIgnore]
         public virtual ICollection<ProductImage> ProductImages { get; set; }
     }
 }

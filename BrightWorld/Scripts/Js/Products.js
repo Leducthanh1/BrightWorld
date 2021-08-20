@@ -1,182 +1,182 @@
 $(document).ready(function () {
-////Load Json from Sever
-//	$.getJSON("Controllers/ProductsController.cs", function (DATA) {
-//		var data = DATA;
-//	});
+//load json from sever
+	$.ajax({
+		url: "/Products/LoadData",
+		success: function (data)
+	});
+// show product funtion
+		function show_product (a) {
+			$('#products_base').append(
+				'<div class="product card col-6 col-sm-4 col-lg-3">' + 
+					'<a href="../htmls/productdetail.html?id=' + data[a].id + '">' +
+						'<img class="card-img-top" src="../img/product/'+ data[a].i1 +'.png">' +
+						'<h6 class="card-title"  title="'+ data[a].name +'">'+ data[a].name +'</h6>' +
+						'<div class="product_describe">' +
+							'<p class="card-text"><i>'+ data[a].br +'</i></p>' +
+							'<p class="card-text ra_value">'+ data[a].rate +'<i class="fas fa-star" style="color: #ffc107;"></i></p>' +
+							'<p class="card-text"><i>'+ data[a].cl +'</i></p>' +
+							'<p class="card-text pri_value">$'+ data[a].price +'</p>' +
+						'</div>' +
+						'<div class="product_button">' +
+							'<a class="addbutton btn btn-outline-primary btn-sm" data-id="' + data[a].id + '">add</a>' +
+							'<a class="buybutton btn btn-primary btn-sm">buy</a>' +
+						'</div>' +
+					'</a>' +
+				'</div>'
+			);
+		};
 
-//// Show Product Funtion
-//		function Show_Product (a) {
-//			$('#Products_Base').append(
-//				'<div class="Product card col-6 col-sm-4 col-lg-3">' + 
-//					'<a href="../Htmls/ProductDetail.html?id=' + data[a].Id + '">' +
-//						'<img class="card-img-top" src="../Img/Product/'+ data[a].I1 +'.png">' +
-//						'<h6 class="card-title"  title="'+ data[a].Name +'">'+ data[a].Name +'</h6>' +
-//						'<div class="Product_Describe">' +
-//							'<p class="card-text"><i>'+ data[a].Br +'</i></p>' +
-//							'<p class="card-text Ra_Value">'+ data[a].Rate +'<i class="fas fa-star" style="color: #ffc107;"></i></p>' +
-//							'<p class="card-text"><i>'+ data[a].Cl +'</i></p>' +
-//							'<p class="card-text Pri_Value">$'+ data[a].Price +'</p>' +
-//						'</div>' +
-//						'<div class="Product_Button">' +
-//							'<a class="AddButton btn btn-outline-primary btn-sm" data-id="' + data[a].Id + '">Add</a>' +
-//							'<a class="BuyButton btn btn-primary btn-sm">Buy</a>' +
-//						'</div>' +
-//					'</a>' +
-//				'</div>'
-//			);
-//		};
-
-//// Show Products 24 First Product
-//	var i = 0;
-//	var Layout =  24;
-//	var N_Product;
-//	if (data.length < Layout) {
-//		N_Product = data.length;
-//		for (i; i < N_Product; i++) {
-//		Show_Product (i);
-//		}
-//		$('#ShowMore_Products-Button').css('display', 'none');
-//	}
-//	else {
-//		N_Product = Layout;
-//		for (i; i < N_Product; i++) {
-//		Show_Product (i);
-//		}
-//		$('#Products_Full').css('display', 'none');
-//	}
+// Show Products 24 First Product
+	var i = 0;
+	var Layout =  24;
+	var N_Product;
+	if (data.length < Layout) {
+		N_Product = data.length;
+		for (i; i < N_Product; i++) {
+		Show_Product (i);
+		}
+		$('#ShowMore_Products-Button').css('display', 'none');
+	}
+	else {
+		N_Product = Layout;
+		for (i; i < N_Product; i++) {
+		Show_Product (i);
+		}
+		$('#Products_Full').css('display', 'none');
+	}
 	
-//	i = 24;
-//	N_Product = 48;
+	i = 24;
+	N_Product = 48;
 
-//// Change Layout Button
-//	$('#Layout').change(function(event) {
-//		$('#Products_Base').empty();
-//		$(window).scrollTop(0);
-//		var X = $('#Layout').val();
-//		if (data.length > (X)) {
-//			$('#ShowMore_Products-Button').css('display', 'block');
-//			$('#Products_Full').css('display', 'none');
-//		}
-//		else {
-//			$('#ShowMore_Products-Button').css('display', 'none');
-//			$('#Products_Full').css('display', 'block');
-//		}
-//		// Layout 12 Product
-//			if (X == 12) {
-//				Layout = 12;
-//				for (var j = 0; j < 12; j++) {
-//					Show_Product (j);
-//				}
-//				i = 12;
-//				N_Product = 24;
-//			}
-//			// Layout 48 Product
-//			else if (X == 48) {
-//				Layout = 48;
-//				for (var j = 0; j < 48; j++) {
-//					Show_Product (j);
-//				}
-//				i = 48;
-//				N_Product = 96;
-//			}
-//			// Layout 24 Product
-//			else {
-//				Layout = 24;
-//				for (var j = 0; j < 24; j++) {
-//					Show_Product (j);
-//				}
-//				i = 24;
-//				N_Product = 48;
-//			}
-//	});
+// Change Layout Button
+	$('#Layout').change(function(event) {
+		$('#Products_Base').empty();
+		$(window).scrollTop(0);
+		var X = $('#Layout').val();
+		if (data.length > (X)) {
+			$('#ShowMore_Products-Button').css('display', 'block');
+			$('#Products_Full').css('display', 'none');
+		}
+		else {
+			$('#ShowMore_Products-Button').css('display', 'none');
+			$('#Products_Full').css('display', 'block');
+		}
+		// Layout 12 Product
+			if (X == 12) {
+				Layout = 12;
+				for (var j = 0; j < 12; j++) {
+					Show_Product (j);
+				}
+				i = 12;
+				N_Product = 24;
+			}
+			// Layout 48 Product
+			else if (X == 48) {
+				Layout = 48;
+				for (var j = 0; j < 48; j++) {
+					Show_Product (j);
+				}
+				i = 48;
+				N_Product = 96;
+			}
+			// Layout 24 Product
+			else {
+				Layout = 24;
+				for (var j = 0; j < 24; j++) {
+					Show_Product (j);
+				}
+				i = 24;
+				N_Product = 48;
+			}
+	});
 
-//// Sorted event
-//	$('#Sort').change(function(event) {
-//		$('#Products_Base').empty();
-//		if (Layout < data.length) {
-//			$('#ShowMore_Products-Button').css('display', 'block');
-//			$('#Products_Full').css('display', 'none');
-//		}
-//		else {
-//			$('#ShowMore_Products-Button').css('display', 'none');
-//			$('#Products_Full').css('display', 'block');
-//		}
-//		$(window).scrollTop(0);
-//		var X = $('#Sort').val();
-//		// Sort Default
-//		if (X == 0) {
-//			data.sort(function(a,b){return a.Id - b.Id});
-//				for (var i = 0; i < Layout; i++) {
-//					Show_Product (i);
-//				}
-//				i = N_Product;
-//				N_Product += Layout;
-//		}
-//		// Price Ascending
-//		else if (X == 1) {
-//			data.sort(function(a,b){return a.Price - b.Price});
-//				for (var i = 0; i < Layout; i++) {
-//					Show_Product (i);
-//				}
-//				i = N_Product;
-//				N_Product += Layout;
-//		}
-//		// Price Decrease
-//		else if (X == -1) {
-//			data.sort(function(a,b){return a.Price - b.Price});
-//			data.reverse();
-//				for (var i = 0; i < Layout; i++) {
-//					Show_Product (i);
-//				}
-//				i = N_Product;
-//				N_Product += Layout;
-//		}
-//		// Evalute Ascending
-//		else if (X == 2) {
-//			data.sort(function(a,b){return a.Rate - b.Rate});
-//				for (var i = 0; i < Layout; i++) {
-//					Show_Product (i);
-//				}
-//				i = N_Product;
-//				N_Product += Layout;
-//		}
-//		// Evalute Decrease
-//		else if (X == -2) {
-//			data.sort(function(a,b){return a.Rate - b.Rate});
-//			data.reverse();
-//			for (var i = 0; i < Layout; i++) {
-//				Show_Product (i);
-//			};
-//			i = N_Product;
-//			N_Product += Layout;
-//		};
-//	});
+// Sorted event
+	$('#Sort').change(function(event) {
+		$('#Products_Base').empty();
+		if (Layout < data.length) {
+			$('#ShowMore_Products-Button').css('display', 'block');
+			$('#Products_Full').css('display', 'none');
+		}
+		else {
+			$('#ShowMore_Products-Button').css('display', 'none');
+			$('#Products_Full').css('display', 'block');
+		}
+		$(window).scrollTop(0);
+		var X = $('#Sort').val();
+		// Sort Default
+		if (X == 0) {
+			data.sort(function(a,b){return a.Id - b.Id});
+				for (var i = 0; i < Layout; i++) {
+					Show_Product (i);
+				}
+				i = N_Product;
+				N_Product += Layout;
+		}
+		// Price Ascending
+		else if (X == 1) {
+			data.sort(function(a,b){return a.Price - b.Price});
+				for (var i = 0; i < Layout; i++) {
+					Show_Product (i);
+				}
+				i = N_Product;
+				N_Product += Layout;
+		}
+		// Price Decrease
+		else if (X == -1) {
+			data.sort(function(a,b){return a.Price - b.Price});
+			data.reverse();
+				for (var i = 0; i < Layout; i++) {
+					Show_Product (i);
+				}
+				i = N_Product;
+				N_Product += Layout;
+		}
+		// Evalute Ascending
+		else if (X == 2) {
+			data.sort(function(a,b){return a.Rate - b.Rate});
+				for (var i = 0; i < Layout; i++) {
+					Show_Product (i);
+				}
+				i = N_Product;
+				N_Product += Layout;
+		}
+		// Evalute Decrease
+		else if (X == -2) {
+			data.sort(function(a,b){return a.Rate - b.Rate});
+			data.reverse();
+			for (var i = 0; i < Layout; i++) {
+				Show_Product (i);
+			};
+			i = N_Product;
+			N_Product += Layout;
+		};
+	});
 
-//// Show More Product Button click event
-//	$('#ShowMore_Products-Button').click(function(event) {
-//		$('.Classify').removeClass('FixBug_Class-Footer');
-//		$('.Products_Header').removeClass('FixBug_ProHeader-Footer');
-//		$('.Products_Header').addClass('Product_Header-FixedTop shadow_bot');
-//		$('.Classify').addClass('Product_Header-FixedTop');
-//		var ScrollLocation = $(window).scrollTop();
-//		if (N_Product < data.length) {
-//			for (i; i < N_Product; i++) {
-//				Show_Product (i);
-//			}
-//			i = N_Product
-//			N_Product += Layout;
-//			console.log(N_Product);
-//		}
-//		else {
-//			N_Product = data.length;
-//			for (i; i < N_Product; i++) {
-//				Show_Product (i);
-//			}
-//			$('#ShowMore_Products-Button').css('display', 'none');
-//			$('#Products_Full').css('display', 'block');
-//		}
-//		$(window).scrollTop(ScrollLocation);
-//	});
+// Show More Product Button click event
+	$('#ShowMore_Products-Button').click(function(event) {
+		$('.Classify').removeClass('FixBug_Class-Footer');
+		$('.Products_Header').removeClass('FixBug_ProHeader-Footer');
+		$('.Products_Header').addClass('Product_Header-FixedTop shadow_bot');
+		$('.Classify').addClass('Product_Header-FixedTop');
+		var ScrollLocation = $(window).scrollTop();
+		if (N_Product < data.length) {
+			for (i; i < N_Product; i++) {
+				Show_Product (i);
+			}
+			i = N_Product
+			N_Product += Layout;
+			console.log(N_Product);
+		}
+		else {
+			N_Product = data.length;
+			for (i; i < N_Product; i++) {
+				Show_Product (i);
+			}
+			$('#ShowMore_Products-Button').css('display', 'none');
+			$('#Products_Full').css('display', 'block');
+		}
+		$(window).scrollTop(ScrollLocation);
+	});
 
 // Show Classify for Mobile Drive
 	$('.Products_Header-FilterIcon').click(function(event) {
