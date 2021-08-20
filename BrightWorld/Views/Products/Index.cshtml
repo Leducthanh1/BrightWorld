@@ -4,6 +4,7 @@
 }
 
 <link href="~/Content/Css_Js/Css/Products.css" rel="stylesheet" />
+
 @section IconPage {
     <i class="fas fa-store"></i>
     <p>Our Store</p>
@@ -16,108 +17,110 @@
         <div class="Conten row">
             <!-- Filter -->
             <div class="Overlay_Classify"></div>
-            <div class="Classify col-6 col-sm-3 col-lg-2 reset_posi">
-                <div class="Classify_Header">
-                    <h4>Filter</h4>
-                </div>
-                <div class="Classify_Conten">
-                    <div class="Classify_Conten-Header">
-                        <h6>Brands</h6>
+            <form method="get">
+                <div class="Classify col-6 col-sm-3 col-lg-2 reset_posi">
+                    <div class="Classify_Header">
+                        <h4>Filter</h4>
                     </div>
-                    <ul id="Brand" class="Classify_Conten-List">
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="AllBrand" name="Brand">
-                            <label for="AllBrand">All Bands</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="RangDong" name="Brand">
-                            <label for="RangDong">Rang Dong</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Philips" name="Brand">
-                            <label for="Philips">Philips</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Panasonic" name="Brand">
-                            <label for="Panasonic">Panasonic</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Comet" name="Brand">
-                            <label for="Comet">Comet</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Paragon" name="Brand">
-                            <label for="Paragon">Paragon</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Duhal" name="Brand">
-                            <label for="Duhal">Duhal</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Anfaco" name="Brand">
-                            <label for="Anfaco">Anfaco</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="Classify_Conten">
-                    <div class="Classify_Conten-Header">
-                        <h6>Category</h6>
+                    <div class="Classify_Conten">
+                        <div class="Classify_Conten-Header">
+                            <h6>Brands</h6>
+                        </div>
+                        <ul id="Brand" class="Classify_Conten-List">
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="AllBrand" name="Brand" value="">
+                                <label for="AllBrand">All Bands</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="RangDong" name="Brand" value="RangDong">
+                                <label for="RangDong">Rang Dong</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Philips" name="Brand" value="Philips">
+                                <label for="Philips">Philips</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Panasonic" name="Brand" value="Panasonic">
+                                <label for="Panasonic">Panasonic</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Comet" name="Brand" value="Comet">
+                                <label for="Comet">Comet</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Paragon" name="Brand" value="Paragon">
+                                <label for="Paragon">Paragon</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Duhal" name="Brand" value="Duhal">
+                                <label for="Duhal">Duhal</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Anfaco" name="Brand" value="Anfaco">
+                                <label for="Anfaco">Anfaco</label>
+                            </li>
+                        </ul>
                     </div>
-                    <ul id="Class" class="Classify_Conten-List">
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="AllClass" name="Category">
-                            <label for="AllClass">All Type</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Bulbs" name="Category">
-                            <label for="Bulbs">Bulbs</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Tube" name="Category">
-                            <label for="Tube">Tube</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Decor" name="Category">
-                            <label for="Decor">Decor</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Spotlight" name="Category">
-                            <label for="Spotlight">Spotlight</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Outdoor" name="Category">
-                            <label for="Outdoor">Outdoor</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Panel" name="Category">
-                            <label for="Panel">Panel</label>
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <input type="radio" id="Street" name="Category">
-                            <label for="Street">Street</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="Classify_Conten">
-                    <div class="Classify_Conten-Header">
-                        <h6>Price Range</h6>
+                    <div class="Classify_Conten">
+                        <div class="Classify_Conten-Header">
+                            <h6>Category</h6>
+                        </div>
+                        <ul id="Class" class="Classify_Conten-List">
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="AllClass" name="Category" value="">
+                                <label for="AllClass">All Type</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Bulbs" name="Category" value="LED Bulbs">
+                                <label for="Bulbs">Bulbs</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Tube" name="Category" value="Led Tube">
+                                <label for="Tube">Tube</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Decor" name="Category" value="Led Decoration">
+                                <label for="Decor">Decor</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Spotlight" name="Category" value="Led Spotlight">
+                                <label for="Spotlight">Spotlight</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Outdoor" name="Category" value="Led Outdoor ">
+                                <label for="Outdoor">Outdoor</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Panel" name="Category" value="Led Panel ">
+                                <label for="Panel">Panel</label>
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <input type="radio" id="Street" name="Category" value="Led Street">
+                                <label for="Street">Street</label>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="Classify_Conten-List">
-                        <li class="Classify_Conten-Item">
-                            <input data-filter='Price' type="range" id="Price" name="Price" min="0" max="500" step="10" value="500">
-                        </li>
-                        <li class="Classify_Conten-Item">
-                            <div class="Show_Value">
-                                <p>$0.0</p>
-                                <p>$<span id="Value">500</span>.0</p>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="Classify_Conten">
+                        <div class="Classify_Conten-Header">
+                            <h6>Price Range</h6>
+                        </div>
+                        <ul class="Classify_Conten-List">
+                            <li class="Classify_Conten-Item">
+                                <input data-filter='Price' type="range" id="Price" name="Price" min="0" max="500" step="10" value="500">
+                            </li>
+                            <li class="Classify_Conten-Item">
+                                <div class="Show_Value">
+                                    <p>$0.0</p>
+                                    <p>$<span id="Value">500</span>.0</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button id="ApplyFilter" type="submit" class="ApplyButton btn btn-sm shadow_none">Apply Filter</button>
+                    </div>
                 </div>
-                <div>
-                    <div id="ApplyFilter" class="ApplyButton btn btn-sm shadow_none">Apply Filter</div>
-                </div>
-            </div>
+            </form>
             <!-- List Products -->
             <div class="Products offset-lg-2 col-12 col-lg-10">
                 <div class="row only-lg">

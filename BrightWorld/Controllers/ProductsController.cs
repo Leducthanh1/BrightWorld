@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using BrightWorld.Models;
+using Newtonsoft.Json;
 
 namespace BrightWorld.Controllers
 {
@@ -14,21 +15,62 @@ namespace BrightWorld.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            string FilterID = (Request.Params.Get("Filter"));
+            string Brand = (Request.Params.Get("Brand"));
+            string Category = (Request.Params.Get("Category"));
+            string Price = (Request.Params.Get("Price"));
             IEnumerable<Product> products;
-            if(!string.IsNullOrEmpty(FilterID))
+            if (!string.IsNullOrEmpty(Brand))
             {
-                //products = db.Products.Include(p => p.Product)
-                //    .Include(p => p.)
-                 products = db.Products.Include(p=>p.ProductFeature).Where(p => p.Brand == FilterID);
+                products = db.Products.Include(p => p.ProductFeature).Where(p => (p.Brand == Brand));
             }
             else
             {
                 products = db.Products;
             }
+            //string Data = JsonConvert.SerializeObject(products);
             return View(products);
         }
-        
+
+        //public ActionResult Index()
+        //{
+        //    string Brand = (Request.Params.Get("Brand"));
+        //    string Category = (Request.Params.Get("Category"));
+        //    string Price = (Request.Params.Get("Price"));
+        //    IEnumerable<Product> brand;
+        //    IEnumerable<Product> category;
+        //    IEnumerable<Product> price;
+        //    IEnumerable<Product> products;
+        //    //Filter Brand
+        //    if (!string.IsNullOrEmpty(Brand))
+        //    {
+        //        brand = db.Products.Include(p => p.ProductFeature).Where(p => (p.Brand == Brand));
+        //    }
+        //    else
+        //    {
+        //        brand = db.Products;
+        //    }
+        //    //Filter Class
+        //    if (!string.IsNullOrEmpty(Category))
+        //    {
+        //        category = db.Products.Include(p => p.ProductFeature).Where(p => (p.Class == Category));
+        //    }
+        //    else
+        //    {
+        //        category = db.Products;
+        //    }
+        //    //Filter Price
+        //    if (!string.IsNullOrEmpty(Price))
+        //    {
+        //        price = db.Products.Include(p => p.ProductFeature).Where(p => (p.Price == Price));
+        //    }
+        //    else
+        //    {
+        //        price = db.Products;
+        //    }
+        //    //string Data = JsonConvert.SerializeObject(products);
+        //    return View(products);
+        //}
+
         public ActionResult Detail(int id)
         {
             //int ProductId = int.Parse(Request.Params.Get("id"));
