@@ -19,9 +19,9 @@ namespace BrightWorld.Controllers
             string Category = (Request.Params.Get("Category"));
             string Price = (Request.Params.Get("Price"));
             IEnumerable<Product> products;
-            if (!string.IsNullOrEmpty(Brand))
+            if (!string.IsNullOrEmpty(Category))
             {
-                products = db.Products.Include(p => p.ProductFeature).Where(p => (p.Brand == Brand));
+                products = db.Products.Include(p => p.ProductFeature).Where(p => (p.Class == Category));
             }
             else
             {
