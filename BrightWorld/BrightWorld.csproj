@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BrightWorldContext.cs" />
+    <Compile Include="Models\Data.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductFeature.cs" />

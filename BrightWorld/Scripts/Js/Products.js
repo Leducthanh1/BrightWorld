@@ -1,52 +1,57 @@
 $(document).ready(function () {
+	var data;
+	var i = 0;
+	var Layout = 24;
+	var N_Product;
+
+// show product funtion
+	function Show_Product(a) {
+		$('#Products_Base').append(
+			'<div class="Product card col-6 col-sm-4 col-lg-3">' +
+			'<a href="/Products/Detail/' + data[a].ID + '">' +
+			'<img class="card-img-top" src="../img/product/' + data[a].ProductFeature.I1 + '.png">' +
+			'<h6 class="card-title"  title="' + data[a].Name + '">' + data[a].Name + '</h6>' +
+			'<div class="Product_Describe">' +
+			'<p class="card-text"><i>' + data[a].Brand + '</i></p>' +
+			'<p class="card-text Ra_Value">' + data[a].ProductFeature.Evalute + '<i class="fas fa-star" style="color: #ffc107;"></i></p>' +
+			'<p class="card-text"><i>' + data[a].Class + '</i></p>' +
+			'<p class="card-text Pri_Value">$' + data[a].Price + '</p>' +
+			'</div>' +
+			'<div class="Product_Button">' +
+			'<a class="AddButton btn btn-outline-primary btn-sm" data-id="' + data[a].ID + '">Add</a>' +
+			'<a class="BuyButton btn btn-primary btn-sm">Buy</a>' +
+			'</div>' +
+			'</a>' +
+			'</div>'
+		);
+	};
+
 //load json from sever
 	$.ajax({
-		url: "/Products/LoadData",
-		success: function (data)
+		url: '/Products/LoadData',
+		type: "GET",
+		dataType: "json",
+		success: function (D) {
+			data = D;
+			// Show Products 24 First Product
+			if (data.length < Layout) {
+				N_Product = data.length;
+				for (i; i < N_Product; i++) {
+					Show_Product(i);
+				}
+				$('#ShowMore_Products-Button').css('display', 'none');
+			}
+			else {
+				N_Product = Layout;
+				for (i; i < N_Product; i++) {
+					Show_Product(i);
+				}
+				$('#Products_Full').css('display', 'none');
+			}
+			i = 24;
+			N_Product = 48;
+		}
 	});
-// show product funtion
-		function show_product (a) {
-			$('#products_base').append(
-				'<div class="product card col-6 col-sm-4 col-lg-3">' + 
-					'<a href="../htmls/productdetail.html?id=' + data[a].id + '">' +
-						'<img class="card-img-top" src="../img/product/'+ data[a].i1 +'.png">' +
-						'<h6 class="card-title"  title="'+ data[a].name +'">'+ data[a].name +'</h6>' +
-						'<div class="product_describe">' +
-							'<p class="card-text"><i>'+ data[a].br +'</i></p>' +
-							'<p class="card-text ra_value">'+ data[a].rate +'<i class="fas fa-star" style="color: #ffc107;"></i></p>' +
-							'<p class="card-text"><i>'+ data[a].cl +'</i></p>' +
-							'<p class="card-text pri_value">$'+ data[a].price +'</p>' +
-						'</div>' +
-						'<div class="product_button">' +
-							'<a class="addbutton btn btn-outline-primary btn-sm" data-id="' + data[a].id + '">add</a>' +
-							'<a class="buybutton btn btn-primary btn-sm">buy</a>' +
-						'</div>' +
-					'</a>' +
-				'</div>'
-			);
-		};
-
-// Show Products 24 First Product
-	var i = 0;
-	var Layout =  24;
-	var N_Product;
-	if (data.length < Layout) {
-		N_Product = data.length;
-		for (i; i < N_Product; i++) {
-		Show_Product (i);
-		}
-		$('#ShowMore_Products-Button').css('display', 'none');
-	}
-	else {
-		N_Product = Layout;
-		for (i; i < N_Product; i++) {
-		Show_Product (i);
-		}
-		$('#Products_Full').css('display', 'none');
-	}
-	
-	i = 24;
-	N_Product = 48;
 
 // Change Layout Button
 	$('#Layout').change(function(event) {
