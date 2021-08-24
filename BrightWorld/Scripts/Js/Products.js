@@ -9,7 +9,7 @@ $(document).ready(function () {
 		$('#Products_Base').append(
 			'<div class="Product card col-6 col-sm-4 col-lg-3">' +
 			'<a href="/Products/Detail/' + data[a].ID + '">' +
-			'<img class="card-img-top" src="../img/product/' + data[a].ProductFeature.I1 + '.png">' +
+			'<img class="card-img-top" src="Content/Img/Product/' + data[a].ProductFeature.Img1 + '.png">' +
 			'<h6 class="card-title"  title="' + data[a].Name + '">' + data[a].Name + '</h6>' +
 			'<div class="Product_Describe">' +
 			'<p class="card-text"><i>' + data[a].Brand + '</i></p>' +
