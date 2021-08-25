@@ -23,10 +23,10 @@ namespace BrightWorld.Controllers
         {
             BrightWorldContext db = new BrightWorldContext();
             string returnUrl = Request.Params["ReturnUrl"];
-            var userRec = db.Users.FirstOrDefault(user => user.UserName.ToLower() == model.UserName && user.Password == model.Password);
+            var userRec = db.Users.FirstOrDefault(user => (user.Email == model.Email && user.Password == model.Password));
             if(userRec != null)
             {
-                SignInUser(userRec.UserName);
+                SignInUser(userRec.Email);
                 if (!string.IsNullOrEmpty(returnUrl))
                 {
                     return Redirect(returnUrl);
