@@ -158,41 +158,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108121142287_model.cs" />
-    <Compile Include="Migrations\202108121142287_model.designer.cs">
-      <DependentUpon>202108121142287_model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121256455_update.cs" />
-    <Compile Include="Migrations\202108121256455_update.designer.cs">
-      <DependentUpon>202108121256455_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161159492_Three.cs" />
-    <Compile Include="Migrations\202108161159492_Three.Designer.cs">
-      <DependentUpon>202108161159492_Three.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161203410_Fo.cs" />
-    <Compile Include="Migrations\202108161203410_Fo.Designer.cs">
-      <DependentUpon>202108161203410_Fo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161211567_Fi.cs" />
-    <Compile Include="Migrations\202108161211567_Fi.Designer.cs">
-      <DependentUpon>202108161211567_Fi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161220185_si.cs" />
-    <Compile Include="Migrations\202108161220185_si.Designer.cs">
-      <DependentUpon>202108161220185_si.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161231114_Sv.cs" />
-    <Compile Include="Migrations\202108161231114_Sv.Designer.cs">
-      <DependentUpon>202108161231114_Sv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108241231030_A.cs" />
-    <Compile Include="Migrations\202108241231030_A.designer.cs">
-      <DependentUpon>202108241231030_A.cs</DependentUpon>
+    <Compile Include="Migrations\202108251242547_Rebuild.cs" />
+    <Compile Include="Migrations\202108251242547_Rebuild.designer.cs">
+      <DependentUpon>202108251242547_Rebuild.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BrightWorldContext.cs" />
-    <Compile Include="Models\Data.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductFeature.cs" />
@@ -763,7 +734,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Migrations\202108241230190_24\" />
     <Folder Include="Upload\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
@@ -778,29 +748,8 @@
     <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108121142287_model.resx">
-      <DependentUpon>202108121142287_model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121256455_update.resx">
-      <DependentUpon>202108121256455_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161159492_Three.resx">
-      <DependentUpon>202108161159492_Three.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161203410_Fo.resx">
-      <DependentUpon>202108161203410_Fo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161211567_Fi.resx">
-      <DependentUpon>202108161211567_Fi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161220185_si.resx">
-      <DependentUpon>202108161220185_si.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161231114_Sv.resx">
-      <DependentUpon>202108161231114_Sv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108241231030_A.resx">
-      <DependentUpon>202108241231030_A.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108251242547_Rebuild.resx">
+      <DependentUpon>202108251242547_Rebuild.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

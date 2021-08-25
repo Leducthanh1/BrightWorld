@@ -237,6 +237,10 @@
 		.BuyButton {
 			margin-left: 4%;
 		}
+
+		.Loading h5{
+			text-align: center;
+		}
 /*General*/
 
 	.Popup {

@@ -17,7 +17,7 @@
         <div class="Conten row">
             <!-- Filter -->
             <div class="Overlay_Classify"></div>
-            <form method="get">
+            <div>
                 <div class="Classify col-6 col-sm-3 col-lg-2 reset_posi">
                     <div class="Classify_Header">
                         <h4>Filter</h4>
@@ -117,10 +117,10 @@
                         </ul>
                     </div>
                     <div>
-                        <button id="ApplyFilter" type="submit" class="ApplyButton btn btn-sm shadow_none">Apply Filter</button>
+                        <button id="ApplyFilter" class="ApplyButton btn btn-sm shadow_none">Apply Filter</button>
                     </div>
                 </div>
-            </form>
+            </div>
             <!-- List Products -->
             <div class="Products offset-lg-2 col-12 col-lg-10">
                 <div class="row only-lg">
@@ -179,8 +179,11 @@
                             }*@
                         </div>
                         <div class="ShowMore_Products">
-                            <div id="ShowMore_Products-Button" class="btn btn-danger btn-sm">Show More</div>
-                            <div id="Products_Full" class="btn btn-outline-secondary btn-block btn-sm disabled">Was Show All</div>
+                            <div id="ShowMore_Products-Button" class="btn btn-danger btn-sm none">Show More</div>
+                            <div id="Products_Full" class="btn btn-outline-secondary btn-block btn-sm disabled none">Was Show All</div>
+                        </div>
+                        <div class="Loading">
+                            <h5>Loading...</h5>
                         </div>
                     </div>
                 </div>
