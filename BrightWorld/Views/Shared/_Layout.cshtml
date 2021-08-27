@@ -41,7 +41,7 @@
             <!-- Nav Bar -->
             <div class="Header_Nav row">
                 <div class="col-4 col-sm-3">
-                    <a class="Header_Nav-Logo" href="@Url.Action("Index", "Home")"><img src="~/Content/Img/Genneral/Full_Logo.png" width="100%"></a>
+                    <a class="Header_Nav-Logo" href="@Url.Action("Index", "Home")"><img src="~/Content/Img/Genneral/Full_Logo.png"></a>
                 </div>
                 <div class="Header_Nav-Link col-hide col-lg-6 col-lg-show">
                     <ul class="Header_Nav-LinkList">
@@ -303,7 +303,7 @@
                             <li class="Footer_Support-ContenItem">
                                 <h5>
                                     <h3>Payment</h3>
-                                    <img src="~/Content/Img/Genneral/Payment_Gateways.png" width="80%">
+                                    <img src="~/Content/Img/Genneral/Payment_Gateways.png">
                                 </h5>
                             </li>
                         </ul>
@@ -404,9 +404,10 @@
             </div>
         </div>
     </footer>
-    <a class="ScrollTop">
-        <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
-    </a>
+    <div>
+        <a class="ScrollTop">
+            <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
+        </a>
     </div>
     @*@Scripts.Render("~/bundles/modernizr")
         @RenderSection("scripts", required: false)*@
