@@ -1,11 +1,21 @@
 $(document).ready(function () {
+<<<<<<< HEAD
+	var url_string = $(location).attr('href')
+	var url = new URL(url_string);
+=======
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 	var DATA;
 	var data;
 	var i = 0;
 	var Layout = 24;
 	var N_Product;
+<<<<<<< HEAD
+	var BrandName = null;
+	var ClassName = null;
+=======
 	var BrandName = '';
 	var ClassName = '';
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 	var Price = 500;
 
 	//load json from sever
@@ -15,7 +25,13 @@ $(document).ready(function () {
 		dataType: "json",
 		success: function (D) {
 			DATA = D;
+<<<<<<< HEAD
+			BrandName = url.searchParams.get("Brand");
+			ClassName = url.searchParams.get("Category");
+			data = Filter(BrandName, ClassName, Price);
+=======
 			data = DATA;
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 			// Show Products 24 First Product
 			if (data.length < Layout) {
 				N_Product = data.length;
@@ -69,8 +85,13 @@ $(document).ready(function () {
 	function Filter(a, b, c) {
 		var x = [];
 		var j = 0;
+<<<<<<< HEAD
+		if (a == null) {
+			if (b == null) {
+=======
 		if (a == '0') {
 			if (b == '0') {
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 				for (var i = 0; i < DATA.length; i++) {
 					if (Number(DATA[i].Price) < Number(Price)) {
 						x[j] = DATA[i];
@@ -90,7 +111,11 @@ $(document).ready(function () {
 			}
 		}
 		else {
+<<<<<<< HEAD
+			if (b == null) {
+=======
 			if (b == '0') {
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 				for (var i = 0; i < DATA.length; i++) {
 					if (DATA[i].Brand == a && (Number(DATA[i].Price) <= Number(Price))) {
 						x[j] = DATA[i];
@@ -337,7 +362,11 @@ $(document).ready(function () {
 	// Filter
 		// Brand Check
 		$('#AllBrand').change(function (event) {
+<<<<<<< HEAD
+			BrandName = null;
+=======
 			BrandName = '0';
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 		});
 		$('#RangDong').change(function (event) {
 			BrandName = 'RangDong';
@@ -363,7 +392,11 @@ $(document).ready(function () {
 
 		// Categotri Check
 		$('#AllClass').change(function (event) {
+<<<<<<< HEAD
+			ClassName = null;
+=======
 			ClassName = '0';
+>>>>>>> 854ce3f11a973ebc38e477460c37a1c23195f609
 		});
 		$('#Bulbs').change(function (event) {
 			ClassName = 'Led Bulbs';

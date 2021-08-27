@@ -14,10 +14,7 @@ namespace BrightWorld.Controllers
         {
             return View("Login");
         }
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
+
         [HttpPost]
         public ActionResult Login(User model)
         {
