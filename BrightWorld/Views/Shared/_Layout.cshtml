@@ -41,7 +41,7 @@
             <!-- Nav Bar -->
             <div class="Header_Nav row">
                 <div class="col-4 col-sm-3">
-                    <a class="Header_Nav-Logo" href="@Url.Action("Index", "Home")"><img src="~/Content/Img/Genneral/Full_Logo.png" width="100%"></a>
+                    <a class="Header_Nav-Logo" href="@Url.Action("Index", "Home")"><img src="~/Content/Img/Genneral/Full_Logo.png"></a>
                 </div>
                 <div class="Header_Nav-Link col-hide col-lg-6 col-lg-show">
                     <ul class="Header_Nav-LinkList">
@@ -292,18 +292,18 @@
                         <ul class="Footer_Support-ContenList">
                             <li class="Footer_Support-ContenItem">
                                 <h5>
-                                    <a href="../Htmls/Support.html">Help & Customer Service</a>
+                                    <a href="@Url.Action("Index", "Support")">Help & Customer Service</a>
                                 </h5>
                             </li>
                             <li class="Footer_Support-ContenItem">
                                 <h5>
-                                    <a href="../Htmls/Support.html#FAQ">FAQ</a>
+                                    <a href="@Url.Action("Index", "Support")#FAQ">FAQ</a>
                                 </h5>
                             </li>
                             <li class="Footer_Support-ContenItem">
                                 <h5>
                                     <h3>Payment</h3>
-                                    <img src="~/Content/Img/Genneral/Payment_Gateways.png" width="80%">
+                                    <img src="~/Content/Img/Genneral/Payment_Gateways.png">
                                 </h5>
                             </li>
                         </ul>
@@ -318,13 +318,13 @@
                         <ul class="Footer_About-ContenList row">
                             <li class="Footer_About-ContenItem col-6 col-lg-12">
                                 <h5>
-                                    <a href="../Htmls/AboutUs.html">Bright World</a>
+                                    <a href="@Url.Action("Index", "About")">Bright World</a>
                                 </h5>
                                 <p>Launched in 2015, BrightWorld was built to provide high quality LED black products at reasonable prices to users</p>
                             </li>
                             <li class="Footer_About-ContenItem col-6 col-lg-12">
                                 <h5>
-                                    <a href="../Htmls/AboutUs.html#About_Ourjourney">Our journey</a>
+                                    <a href="@Url.Action("Index", "About")#About_Ourjourney">Our journey</a>
                                 </h5>
                                 <p>We will constantly develop with faith and hope to be nurtured every day to bring the best values to society.</p>
                             </li>
@@ -404,9 +404,10 @@
             </div>
         </div>
     </footer>
-    <a class="ScrollTop">
-        <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
-    </a>
+    <div>
+        <a class="ScrollTop">
+            <i id="ScrollTop" class="fas fa-angle-double-up fa-fw"></i>
+        </a>
     </div>
     @*@Scripts.Render("~/bundles/modernizr")
         @RenderSection("scripts", required: false)*@

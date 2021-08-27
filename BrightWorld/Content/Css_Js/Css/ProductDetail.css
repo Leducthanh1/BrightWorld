@@ -1,5 +1,6 @@
 /*Product_Info*/
-	.Product_Info {
+@import url('Main.css');
+.Product_Info {
 		background-color: var(--light3_color);
 		box-shadow: 2px 2px 5px var(--dark1-01_color);
 		margin-bottom: 25px;
@@ -11,10 +12,13 @@
 			margin-bottom: 15px;
 		}
 
-		#Product_Img-1, #Product_Img-2, #Product_Img-3{
+		#Product_Img {
 			width: 100%;
 			margin: 0 auto;
 			margin-top: 15px;
+		}
+
+		#Product_Img-1, #Product_Img-2, #Product_Img-3{
 			display: none;
 		}
 
@@ -87,7 +91,7 @@
 				-webkit-user-select: none;
 			}
 
-			..Product_Detail-Amount td i {
+			.Product_Detail-Amount td i {
 				color: var(--blue1_color);
 			}
 

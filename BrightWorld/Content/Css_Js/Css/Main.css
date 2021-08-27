@@ -129,6 +129,7 @@
     }
 
     .Header_Nav-Logo img{
+      width: 100%;
       min-height: 30px;
       max-width: 200px;
     }
@@ -660,6 +661,10 @@
 
     }
 
+    .Footer_Support-ContenItem img {
+        width: 80%;
+    }
+
   /*Footer About*/
 
     .Footer_About {
@@ -922,6 +927,7 @@
       .Product_Header-ScrolDown {
         transform: translateY(45px)!important;
       }
+    }
 
     @media (min-width: 768px) {
 
@@ -1033,5 +1039,4 @@
       .Cart_Height {
         min-height: 780px;
       }
-      
     }
